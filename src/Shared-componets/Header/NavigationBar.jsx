@@ -34,14 +34,7 @@ const NavigationBar = () => {
               placement="end" className="w-50"
             >
               <Offcanvas.Body>
-                <Nav className="justify-content-end flex-grow-1 pe-3">
-                  <Nav.Link href="#action1">Home</Nav.Link>
-                  <Nav.Link href="#action2">All Toys</Nav.Link>
-                  <Nav.Link href="#action3">My Toys</Nav.Link>
-                  <Nav.Link href="#action4">ADD A Toys</Nav.Link>
-                  <Nav.Link href="#action5">Blogs</Nav.Link>
-                </Nav>
-                <Form className="d-flex">
+              <Form className="d-flex">
                   <Form.Control
                     type="search"
                     placeholder="Search"
@@ -50,6 +43,15 @@ const NavigationBar = () => {
                   />
                   <Button variant="outline-success">Search</Button>
                 </Form>
+                <Nav className="justify-content-end flex-grow-1 pe-3">
+                  <Nav.Link href="#action1">Home</Nav.Link>
+                  <Nav.Link href="#action2">All Toys</Nav.Link>
+                  <Nav.Link href="#action3">My Toys</Nav.Link>
+                  <Nav.Link href="#action4">ADD A Toys</Nav.Link>
+                  <Nav.Link href="#action5">Blogs</Nav.Link>
+                <Nav.Link href="#action6">Login </Nav.Link>
+                </Nav>
+               
               </Offcanvas.Body>
             </Navbar.Offcanvas>
           </Container>
