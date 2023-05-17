@@ -28,10 +28,10 @@ const NavigationBar = () => {
             </Navbar.Brand>
 
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
-            <Navbar.Offcanvas
+            <Navbar.Offcanvas 
               id={`offcanvasNavbar-expand-${expand}`}
               aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
-              placement="end"
+              placement="end" className="w-50"
             >
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
