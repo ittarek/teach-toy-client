@@ -6,9 +6,9 @@ import Footer from "../../Shared-componets/Footer/Footer";
 const Home = () => {
   return (
     <>
-      <NavigationBar></NavigationBar>
+ 
       <Banner></Banner>
-      <Footer></Footer>
+  
     </>
   );
 };

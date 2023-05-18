@@ -1,5 +1,6 @@
 import React from "react";
 import "./Footer.css";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -58,15 +59,15 @@ const Footer = () => {
                 </div>
                 <div className="footer-social-icon">
                   <span>Follow us</span>
-                  <a href="#">
+                  <Link to='https://www.facebook.com/home.php'>
                     <i className="fab fa-facebook-f facebook-bg"></i>
-                  </a>
-                  <a href="#">
+                  </Link>
+                  <Link to='https://www.twitter.com/home.php'>
                     <i className="fab fa-twitter twitter-bg"></i>
-                  </a>
-                  <a href="#">
+                  </Link>
+                  <Link to='https://www.google.com/'>
                     <i className="fab fa-google-plus-g google-bg"></i>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -77,11 +78,11 @@ const Footer = () => {
                 </div>
                 <ul>
                   <li>
-                    <a href="#">Home</a>
+                    <Link href="#">Home</Link>
                   </li>
 
                   <li>
-                    <a href="#">portfolio</a>
+                    <Link href="#">portfolio</Link>
                   </li>
 
                   <li>
@@ -89,7 +90,7 @@ const Footer = () => {
                   </li>
 
                   <li>
-                    <a href="#">Contact us</a>
+                    <Link href="#">Contact us</Link>
                   </li>
                 </ul>
               </div>

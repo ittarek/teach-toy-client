@@ -11,30 +11,34 @@ import {
   Navbar,
 } from "react-bootstrap";
 import Offcanvas from "react-bootstrap/Offcanvas";
+import { Link } from "react-router-dom";
 
 const NavigationBar = () => {
   return (
-    <>
+    <div className="navbar-margin">
       {["lg"].map((expand) => (
-        <Navbar key={expand} bg="light" expand={expand} className="mb-3">
-          <Container fluid>
+        <Navbar key={expand} bg="dark" expand={expand} className="mb-3">
+          <Container>
             <Navbar.Brand href="#">
               <img
                 className="img-fluid brand-image rounded-5 "
                 src="https://i.ibb.co/9WHsz7N/ai-robot-2540154-2124943.png"
                 alt=""
               />{" "}
-             <span className="text-success fw-bolder fs-1 fst-italic">Tech Toys</span>{" "}
+              <span className="text-success fw-bolder fs-1 fst-italic">
+                Tech Toys
+              </span>{" "}
             </Navbar.Brand>
 
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
-            <Navbar.Offcanvas 
+            <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
               aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
-              placement="end" className="w-50"
+              placement="end"
+              className="w-50 bg-transparent h-75"
             >
               <Offcanvas.Body>
-              <Form className="d-flex">
+                <Form className="d-flex">
                   <Form.Control
                     type="search"
                     placeholder="Search"
@@ -43,21 +47,28 @@ const NavigationBar = () => {
                   />
                   <Button variant="outline-success">Search</Button>
                 </Form>
-                <Nav className="justify-content-end flex-grow-1 pe-3">
-                  <Nav.Link href="#action1">Home</Nav.Link>
-                  <Nav.Link href="#action2">All Toys</Nav.Link>
-                  <Nav.Link href="#action3">My Toys</Nav.Link>
-                  <Nav.Link href="#action4">ADD A Toys</Nav.Link>
-                  <Nav.Link href="#action5">Blogs</Nav.Link>
-                <Nav.Link href="#action6">Login </Nav.Link>
+                <Nav className="justify-content-end flex-grow-1 pe-3 text-white">
+                  <Nav.Link className="text-white">
+                    <Link to="/"> Home</Link>
+                  </Nav.Link>
+                  <Nav.Link className="text-white">
+                    <Link to="toy"> All Toys</Link>
+                  </Nav.Link>
+                  <Nav.Link className="text-white">My Toys</Nav.Link>
+                  <Nav.Link className="text-white">ADD A Toys</Nav.Link>
+                  <Nav.Link className="text-white">
+                    <Link to="/blog"> Blogs</Link>
+                  </Nav.Link>
+                  <Nav.Link className="text-white">
+                    <Link to="/login"> Login</Link>
+                  </Nav.Link>
                 </Nav>
-               
               </Offcanvas.Body>
             </Navbar.Offcanvas>
           </Container>
         </Navbar>
       ))}
-    </>
+    </div>
   );
 };
 
