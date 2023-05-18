@@ -14,15 +14,12 @@ const [show, setShow] =useState(false)
   }, []);
   return (
     <div className="row  my-5 gap-2">
-      {feture.slice(0, show ? 6  : 3  ).map((toy) => (
+      {feture.slice(0, show ? 15  : 3  ).map((toy) => (
         <Card className="col-lg-3  shadow-1-primary mx-auto" style={{  }}>
           <Card.Img variant="top" src={toy.image} />
           <Card.Body>
             <Card.Title>{toy.name}</Card.Title>
-            <Card.Text>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </Card.Text>
+         
           </Card.Body>
           <ListGroup className="list-group-flush">
             <p>Features</p>

@@ -6,7 +6,7 @@
     "screen_size": "4.5 inches",
     "battery_life": "8 hours",
     "features": ["Parental controls", "Educational apps", "Camera"],
-    "image": "https://example.com/smartphone_kids.jpg",
+    "image": "https://images.unsplash.com/photo-1421757350652-9f65a35effc7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=874&q=80",
     "id": "KID001"
   },
   {
@@ -20,7 +20,7 @@
       "Content filtering",
       "Interactive games"
     ],
-    "image": "https://example.com/tablet_kids.jpg",
+    "image": "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80",
     "id": "KID002"
   },
   {
@@ -29,7 +29,7 @@
     "age_range": "4-8",
     "skills_developed": ["STEM education", "Problem-solving", "Logic skills"],
     "features": ["Building blocks", "Electronic components", "Activity book"],
-    "image": "https://example.com/learning_kit.jpg",
+    "image": "https://images.unsplash.com/photo-1596496181848-3091d4878b24?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
     "id": "KID003"
   },
   {
@@ -42,7 +42,7 @@
       "Touch-sensitive pages",
       "Music and sound effects"
     ],
-    "image": "https://example.com/storybook.jpg",
+    "image": "https://images.unsplash.com/photo-1666198262791-1d843c28cb73?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
     "id": "KID004"
   },
   {
@@ -50,7 +50,7 @@
     "price": 19.99,
     "age_range": "3-12",
     "features": ["Volume-limited", "Comfortable fit", "Durable construction"],
-    "image": "https://example.com/headphones.jpg",
+    "image": "https://media.istockphoto.com/id/1271954591/photo/dont-tell-anyone-what-im-listening-to.jpg?s=1024x1024&w=is&k=20&c=KAIoAdVOMS1FoggC40AigRk7-cLhl0DguQn0uJdytug=",
     "id": "KID005"
   },
   {
@@ -59,7 +59,7 @@
     "age_range": "8-12",
     "skills_developed": ["Coding", "Problem-solving", "Creativity"],
     "features": ["Programmable", "Obstacle avoidance", "Interactive games"],
-    "image": "https://example.com/coding_robot.jpg",
+    "image": "https://plus.unsplash.com/premium_photo-1663089698544-dad4b805ebaf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=872&q=80",
     "id": "KID006"
   },
   {
@@ -72,7 +72,7 @@
       "Filters and effects",
       "Built-in games"
     ],
-    "image": "https://example.com/camera_kids.jpg",
+    "image": "https://images.unsplash.com/photo-1552843511-1bf6055bb29c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
     "id": "KID007"
   },
   {
@@ -81,7 +81,7 @@
     "age_range": "6-12",
     "battery_life": "12 hours",
     "features": ["GPS tracking", "SOS button", "Step counter"],
-    "image": "https://example.com/smartwatch_kids.jpg",
+    "image": "https://images.unsplash.com/photo-1434494571168-ab162bce2813?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
     "id": "KID008"
   },
   {
@@ -90,7 +90,7 @@
     "age_range": "7-12",
     "skills_developed": ["Robotics", "Programming", "Problem-solving"],
     "features": ["Buildable robot", "Programmable", "Sensors and actuators"],
-    "image": "https://example.com/robot_kit.jpg",
+    "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=465&q=80",
     "id": "KID009"
   },
   {
@@ -99,7 +99,7 @@
     "age_range": "3-8",
     "battery_life": "6 hours",
     "features": ["MP3 playback", "Built-in speaker", "Headphone jack"],
-    "image": "https://example.com/music_player.jpg",
+    "image": "https://images.unsplash.com/photo-1454922915609-78549ad709bb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=871&q=80",
     "id": "KID010"
   },
   {
@@ -112,7 +112,7 @@
       "Left and right steering",
       "Remote control"
     ],
-    "image": "https://example.com/remote_control_car.jpg",
+    "image": "https://images.unsplash.com/photo-1528158830489-3ba27c0c9325?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=451&q=80",
     "id": "KID011"
   },
   {
@@ -124,7 +124,7 @@
       "Adjustable head strap",
       "Compatible with smartphones"
     ],
-    "image": "https://example.com/vr_headset.jpg",
+    "image": "https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
     "id": "KID012"
   },
   {
@@ -132,7 +132,7 @@
     "price": 49.99,
     "age_range": "4-10",
     "features": ["Multiple instrument sounds", "Demo songs", "Learning modes"],
-    "image": "https://example.com/piano_keyboard.jpg",
+    "image": "https://images.unsplash.com/photo-1627919617040-281311750887?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=891&q=80",
     "id": "KID013"
   },
   {
@@ -140,7 +140,7 @@
     "price": 29.99,
     "age_range": "5-12",
     "features": ["Two-way communication", "Long-range", "Built-in flashlight"],
-    "image": "https://example.com/walkie_talkies.jpg",
+    "image": "https://images.unsplash.com/photo-1586374579268-e08642454549?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=370&q=80",
     "id": "KID014"
   },
   {
@@ -152,7 +152,7 @@
       "Drawing and painting tools",
       "Wireless connectivity"
     ],
-    "image": "https://example.com/drawing_tablet.jpg",
+    "image": "https://images.unsplash.com/photo-1599009433234-8d350e1e0942?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
     "id": "KID015"
   }
 ]
