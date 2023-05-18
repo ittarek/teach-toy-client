@@ -1,19 +1,11 @@
 import React, { useContext } from "react";
 import "./NavigationBar.css";
-import { MDBBtn, MDBContainer } from "mdb-react-ui-kit";
-import {
-  Button,
-  Container,
-  Form,
-  Nav,
-  NavDropdown,
-  NavLink,
-  Navbar,
-} from "react-bootstrap";
+
+import { Button, Container, Form, Nav, NavLink, Navbar } from "react-bootstrap";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
-import { Tooltip } from "react-bootstrap";
+
 import tippy from "tippy.js";
 import "tippy.js/dist/tippy.css";
 
@@ -36,7 +28,7 @@ const NavigationBar = () => {
   return (
     <div className="navbar-margin">
       {["lg"].map((expand) => (
-        <Navbar key={expand} bg='dark' expand={expand} className="mb-3">
+        <Navbar key={expand} bg="dark" expand={expand} className="mb-3">
           <Container>
             <Navbar.Brand href="#">
               <img
@@ -73,10 +65,19 @@ const NavigationBar = () => {
                   <Nav.Link className="text-white">
                     <Link to="toy"> All Toys</Link>
                   </Nav.Link>
-                 {
-                  user?.email ? <> <Nav.Link className="text-white"><Link to='/myToys'>My Toys</Link></Nav.Link>
-                  <Nav.Link className="text-white"><Link to='/addToy'>ADD A Toys</Link></Nav.Link></> : ""
-                 }
+                  {user?.email ? (
+                    <>
+                      {" "}
+                      <Nav.Link className="text-white">
+                        <Link to="/myToys">My Toys</Link>
+                      </Nav.Link>
+                      <Nav.Link className="text-white">
+                        <Link to="/addToy">ADD A Toys</Link>
+                      </Nav.Link>
+                    </>
+                  ) : (
+                    ""
+                  )}
                   <Nav.Link className="text-white">
                     <Link to="/blog"> Blogs</Link>
                   </Nav.Link>
@@ -84,7 +85,6 @@ const NavigationBar = () => {
                     {user?.email ? (
                       <NavLink
                         onClick={handleLogOut}
-                
                         className="btn btn-outline-info  btn-success  nav-link"
                       >
                         LogOut
@@ -92,7 +92,6 @@ const NavigationBar = () => {
                     ) : (
                       <Link
                         to="/login"
-                     
                         className="btn btn-outline-info btn-success nav-link "
                       >
                         {" "}
@@ -108,11 +107,14 @@ const NavigationBar = () => {
                     )} */}
 
                     {user?.email && (
-                      <li id='MyTool' onMouseOver={handleToltip} className=" ms-3  ">
+                      <li
+                        id="MyTool"
+                        onMouseOver={handleToltip}
+                        className=" ms-3  "
+                      >
                         {" "}
                         {
                           <img
-                           
                             className="photourl"
                             src={user.photoURL}
                             alt=""
