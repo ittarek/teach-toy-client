@@ -13,7 +13,7 @@ const Welcome = () => {
           consectetur est minima vitae nihil assumenda molestiae neque repellat
           exercitationem pariatur voluptatum optio, magnam doloremque?
         </p>
-      </div>
+      </div> 
 
       <div className="details">
         <div className="first-product d-lg-flex gap-5">
