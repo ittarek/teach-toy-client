@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FaCross } from "react-icons/fa";
 
 const Register = () => {
-//   const { createUser, updateUser } = useContext(AuthContext);
+  //   const { createUser, updateUser } = useContext(AuthContext);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   // console.log("register page",photo);
@@ -15,22 +15,21 @@ const Register = () => {
   //   register function
   const handleRegister = (event) => {
     event.preventDefault();
-      setSuccess('')
+    setSuccess("");
     setError("");
     const form = event.target;
     const name = form.name.value;
     const photoURL = form.photoURL.value;
     const email = form.email.value;
     const password = form.password.value;
-  
+
     form.reset();
 
     createUser(email, password)
       .then((result) => {
         const registerUser = result.user;
         console.log(registerUser);
-        updateUser(result.user,name,photoURL)
-        
+        updateUser(result.user, name, photoURL);
       })
       .catch((error) => {
         console.log(error.message);
@@ -41,28 +40,36 @@ const Register = () => {
     } else if (!(email, password)) {
       setError("please give email and password");
       return;
-    }else{
-      return  setSuccess("Registration has been successFul")
+    } else {
+      return setSuccess("Registration has been successFul");
     }
   };
   return (
     <div className="register mx-auto my-5">
-     
       <div className="reg-box login">
         <h2 className="text-success text-center">Register</h2>
         <form onSubmit={handleRegister} action="#">
           <div className="input-box">
             <span className="icon">
-              {/* <ion-icon name="name"></ion-icon> */}
+     
+            
+      
             </span>
-            <input className="border-0 outline-0 w-100 h-100 text-white  border-bottom border-info" type="name" name="name" id="" required />
+            <input
+              className="border-0 outline-0 w-100 h-100 text-white  border-bottom border-info"
+              type="name"
+              name="name"
+              id=""
+              required
+            />
             <label for="name">Name</label>
           </div>
           <div className="input-box">
             <span className="icon">
               {/* <ion-icon name="photoUrl"></ion-icon> */}
             </span>
-            <input className="border-0 outline-0 w-100 h-100 text-white  border-bottom border-info"
+            <input
+              className="border-0 outline-0 w-100 h-100 text-white  border-bottom border-info"
               type="url"
               name="photoURL"
               id=""
@@ -71,20 +78,31 @@ const Register = () => {
               required
             />
             <label for="photoUrl">Photo URL</label>
-    
           </div>
           <div className="input-box">
             <span className="icon">
-              {/* <ion-icon name="mail"></ion-icon> */}
+            <i class="fa-solid fa-envelope"></i>
             </span>
-            <input className="border-0 outline-0 w-100 h-100 text-white border-bottom border-info" type="email" name="email" id="" required />
+            <input
+              className="border-0 outline-0 w-100 h-100 text-white border-bottom border-info"
+              type="email"
+              name="email"
+              id=""
+              required
+            />
             <label for="Email">Email</label>
           </div>
           <div className="input-box">
             <span className="icon">
-              <ion-icon name="lock-closed"></ion-icon>
+   <i class="fa-solid fa-lock"></i>
             </span>
-            <input className="border-0 outline-0 w-100 h-100 text-white  border-bottom border-info" type="password" name="password" id="" required />
+            <input
+              className="border-0 outline-0 w-100 h-100 text-white  border-bottom border-info"
+              type="password"
+              name="password"
+              id=""
+              required
+            />
             <label for="password">Password</label>
           </div>
           <div className="remember-forgat">
@@ -111,7 +129,9 @@ const Register = () => {
           <span className="text-danger fw-bold fst-italic rounded p-1 mb-2">
             {error}
           </span>
-          <span className="text-success fw-bold fst-italic rounded p-1 mb-2">{success}</span>
+          <span className="text-success fw-bold fst-italic rounded p-1 mb-2">
+            {success}
+          </span>
         </form>
       </div>
     </div>
