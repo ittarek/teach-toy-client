@@ -110,7 +110,7 @@ const Register = () => {
               <input type="checkbox" name="" id="" />
               remember me
             </label>
-            <Link href="#">Forgat Password</Link>
+            <Link to='#'>Forgat Password</Link>
           </div>
           <Button
             variant="btn-success"

@@ -1,6 +1,5 @@
 .brand-image {
   width: 80px;
-
 }
 /* .navbar-margin{
           margin-top: -50px;
@@ -35,7 +34,7 @@ h2 {
 .search-box {
   margin-right: 400px;
 }
-@media screen and (max-width: 576px) {
+/* @media screen and (max-width: 576px) {
   .search-box {
     width: 150px;
     margin-right: 0;
@@ -45,10 +44,10 @@ h2 {
   .logo {
     margin-left: 0;
   }
-}
-.photourl{
+} */
+.photourl {
   border-radius: 50px;
   width: 40px;
 }
 
-/* ======= Navbar ======= */
+/* =======bar ======= */

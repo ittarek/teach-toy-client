@@ -42,13 +42,13 @@ const Footer = () => {
             <div className="col-xl-4 col-lg-4 mb-50">
               <div className="footer-widget">
                 <div className="footer-logo">
-                  <a href="/">
+                  <Link href="/">
                     <img
                       src="https://i.ibb.co/9WHsz7N/ai-robot-2540154-2124943.png"
                       className="img-fluid w-25"
                       alt="logo"
                     />
-                  </a>
+                  </Link>
                 </div>
                 <div className="footer-text">
                   <p>
@@ -78,19 +78,19 @@ const Footer = () => {
                 </div>
                 <ul>
                   <li>
-                    <Link href="#">Home</Link>
+                    <Link to='/'>Home</Link>
                   </li>
 
                   <li>
-                    <Link href="#">portfolio</Link>
+                    <Link to=''>portfolio</Link>
                   </li>
 
                   <li>
-                    <a href="#">About us</a>
+                    <Link>About us</Link>
                   </li>
 
                   <li>
-                    <Link href="#">Contact us</Link>
+                    <Link>Contact us</Link>
                   </li>
                 </ul>
               </div>

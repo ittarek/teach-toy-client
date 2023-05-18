@@ -49,7 +49,7 @@ const NavigationBar = () => {
               className="w-50 bg-transparent h-75"
             >
               <Offcanvas.Body>
-                <Form className="d-flex">
+                {/* <Form className="d-flex">
                   <Form.Control
                     type="search"
                     placeholder="Search"
@@ -57,7 +57,7 @@ const NavigationBar = () => {
                     aria-label="Search"
                   />
                   <Button variant="outline-success">Search</Button>
-                </Form>
+                </Form> */}
                 <Nav className="justify-content-end flex-grow-1 pe-3 text-white">
                   <Nav.Link className="text-white">
                     <Link to="/"> Home</Link>
@@ -85,14 +85,14 @@ const NavigationBar = () => {
                     {user?.email ? (
                       <NavLink
                         onClick={handleLogOut}
-                        className="btn btn-outline-info  btn-success  nav-link"
+                        className="btn-outline-info  btn-success  "
                       >
                         LogOut
                       </NavLink>
                     ) : (
                       <Link
                         to="/login"
-                        className="btn btn-outline-info btn-success nav-link "
+                        className="btn btn-outline-info btn-success  "
                       >
                         {" "}
                         Login
@@ -100,12 +100,6 @@ const NavigationBar = () => {
                     )}
                   </Nav.Link>
                   <Nav.Link className="text-white">
-                    {/* {user?.email && (
-                      <span className="text-secondary ms-3 border-danger border-4 rounded-2">
-                        {user.displayName}{" "}
-                      </span>
-                    )} */}
-
                     {user?.email && (
                       <li
                         id="MyTool"

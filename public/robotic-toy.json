@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Robo-Buddy",
+    "price": 49.99,
+    "picture": "https://plus.unsplash.com/premium_photo-1677094310918-cc302203b21c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80",
+    "rating": 4.5,
+    "id": "RB001"
+  },
+  {
+    "name": "Cybertronix Adventures",
+    "price": 79.99,
+    "picture": "https://example.com/techdroid.jpg",
+    "rating": 4.2,
+    "id": "TD002"
+  },
+  {
+    "name": "TechBot",
+    "price": 99.99,
+    "picture": "https://plus.unsplash.com/premium_photo-1681458713811-ccc94bbdc127?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=757&q=80",
+    "rating": 4.7,
+    "id": "MT003"
+  },
+  {
+    "name": "CircuitCraft",
+    "price": 59.99,
+    "picture": "https://example.com/roboracer.jpg",
+    "rating": 4.0,
+    "id": "RR004"
+  },
+  {
+    "name": "Electronics Explorers",
+    "price": 29.99,
+    "picture": "https://example.com/cyberpet.jpg",
+    "rating": 4.8,
+    "id": "CP005"
+  }
+]

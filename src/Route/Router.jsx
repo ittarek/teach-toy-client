@@ -9,6 +9,7 @@ import Register from "../Pages/RegisterPage/Register";
 import AddToy from "../Pages/AddToyPage/AddToy";
 import PrivetRoute from "./PrivetRoute/PrivetRoute";
 import MyToys from "../Pages/MyToysPage/MyToys";
+import RoboticToy from "../Pages/ShopCategoryPage/RoboticToyPage/RoboticToy";
 
 export const router = createBrowserRouter([
   {
@@ -43,6 +44,11 @@ export const router = createBrowserRouter([
             <MyToys></MyToys>
           </PrivetRoute>
         ),
+      },
+
+      {
+        path: "/roboticToy/:id",
+        element: <RoboticToy></RoboticToy>,
       },
       {
         path: "/blog",

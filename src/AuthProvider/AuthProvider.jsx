@@ -1,6 +1,5 @@
 import React, { createContext } from "react";
 import {
-
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
   getAuth,
@@ -15,10 +14,10 @@ import { FaUserAlt } from "react-icons/fa";
 import { useState } from "react";
 import { useEffect } from "react";
 import app from "../firebase/firebase.config";
+import { Spinner } from "react-bootstrap";
 
 const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
-
 
 export const AuthContext = createContext(null);
 const AuthProvider = ({ children }) => {
@@ -47,8 +46,6 @@ const AuthProvider = ({ children }) => {
     return signInWithPopup(auth, googleProvider);
   };
 
- 
-
   //   logOut provider
   const loggedOut = () => {
     setSpinner(true);
@@ -66,21 +63,18 @@ const AuthProvider = ({ children }) => {
     };
   }, []);
 
-
-  const updateUser = (user, name,photoUrl) => {
+  const updateUser = (user, name, photoUrl) => {
     updateProfile(user, {
-        displayName: name,
-        photoURL : photoUrl
+      displayName: name,
+      photoURL: photoUrl,
     })
-        .then(() => {
-            console.log('user name and photo updated')
-        })
-        .catch(error => {
-            setError(error.message);
-        })
-}
-
-
+      .then(() => {
+        console.log("user name and photo updated");
+      })
+      .catch((error) => {
+        setError(error.message);
+      });
+  };
 
   const authInfo = {
     user,
@@ -88,14 +82,14 @@ const AuthProvider = ({ children }) => {
     createLogin,
     loggedOut,
     googleLogin,
-
+    setSpinner,
     spinner,
     photoUrl,
     updateUser,
   };
 
   return (
-    <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
+    <AuthContext.Provider value={authInfo}>{children} </AuthContext.Provider>
   );
 };
 
