@@ -6,6 +6,9 @@ import ErrorLayOut from "../LayOut/ErrorLayOut/ErrorLayOut";
 import Blog from "../Pages/BlogPage/Blog";
 import Login from "../Pages/LoginPage/Login";
 import Register from "../Pages/RegisterPage/Register";
+import AddToy from "../Pages/AddToyPage/AddToy";
+import PrivetRoute from "./PrivetRoute/PrivetRoute";
+import MyToys from "../Pages/MyToysPage/MyToys";
 
 export const router = createBrowserRouter([
   {
@@ -24,6 +27,22 @@ export const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/addToy",
+        element: (
+          <PrivetRoute>
+            <AddToy></AddToy>
+          </PrivetRoute>
+        ),
+      },
+      {
+        path: "/myToys",
+        element: (
+          <PrivetRoute>
+            <MyToys></MyToys>
+          </PrivetRoute>
+        ),
       },
       {
         path: "/blog",

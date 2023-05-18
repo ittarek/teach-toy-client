@@ -8,7 +8,7 @@ import { Button } from "react-bootstrap";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const Login = () => {
-  const {createLogin, googleLogin } = useContext(AuthContext);
+  const { createLogin, googleLogin } = useContext(AuthContext);
   const [error, setError] = useState("");
 
   //   redirect to Chef details page
@@ -62,25 +62,21 @@ const Login = () => {
               className="border-0 outline-0 w-100 h-100 text-white bg-dark border-bottom border-info"
               type="email"
               name="email"
-              id=""
               required
             />
-            <label for="Email" className="text-white">
+            <label htmlFor="Email" className="text-white">
               Email
             </label>
           </div>
           <div className="input-box">
-            <span className="icon">
-              {/* <ion-icon name="lock-closed"></ion-icon> */}
-            </span>
+            <span className="icon"></span>
             <input
               className="border-0 outline-0 w-100 h-100 text-white bg-dark border-bottom border-info"
               type="password"
               name="password"
-              id=""
               required
             />
-            <label for="password" className="text-white">
+            <label htmlFor="password" className="text-white">
               Password
             </label>
           </div>

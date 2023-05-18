@@ -73,8 +73,10 @@ const NavigationBar = () => {
                   <Nav.Link className="text-white">
                     <Link to="toy"> All Toys</Link>
                   </Nav.Link>
-                  <Nav.Link className="text-white">My Toys</Nav.Link>
-                  <Nav.Link className="text-white">ADD A Toys</Nav.Link>
+                 {
+                  user?.email ? <> <Nav.Link className="text-white"><Link to='/myToys'>My Toys</Link></Nav.Link>
+                  <Nav.Link className="text-white"><Link to='/addToy'>ADD A Toys</Link></Nav.Link></> : ""
+                 }
                   <Nav.Link className="text-white">
                     <Link to="/blog"> Blogs</Link>
                   </Nav.Link>
@@ -88,14 +90,14 @@ const NavigationBar = () => {
                         LogOut
                       </NavLink>
                     ) : (
-                      <NavLink
+                      <Link
                         to="/login"
                      
                         className="btn btn-outline-info btn-success nav-link "
                       >
                         {" "}
                         Login
-                      </NavLink>
+                      </Link>
                     )}
                   </Nav.Link>
                   <Nav.Link className="text-white">
