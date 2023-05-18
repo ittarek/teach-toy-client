@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./NavigationBar.css";
 import { MDBBtn, MDBContainer } from "mdb-react-ui-kit";
 import {
@@ -12,12 +12,31 @@ import {
 } from "react-bootstrap";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { Tooltip } from "react-bootstrap";
+import tippy from "tippy.js";
+import "tippy.js/dist/tippy.css";
 
 const NavigationBar = () => {
+  const { user, loggedOut } = useContext(AuthContext);
+
+  // LogOut function
+  const handleLogOut = () => {
+    loggedOut()
+      .then()
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
+  const handleToltip = () => {
+    tippy("#MyTool", {
+      content: user?.displayName || "hello",
+    });
+  };
   return (
     <div className="navbar-margin">
       {["lg"].map((expand) => (
-        <Navbar key={expand} bg="dark" expand={expand} className="mb-3">
+        <Navbar key={expand} bg='dark' expand={expand} className="mb-3">
           <Container>
             <Navbar.Brand href="#">
               <img
@@ -60,7 +79,45 @@ const NavigationBar = () => {
                     <Link to="/blog"> Blogs</Link>
                   </Nav.Link>
                   <Nav.Link className="text-white">
-                    <Link to="/login"> Login</Link>
+                    {user?.email ? (
+                      <NavLink
+                        onClick={handleLogOut}
+                
+                        className="btn btn-outline-info  btn-success  nav-link"
+                      >
+                        LogOut
+                      </NavLink>
+                    ) : (
+                      <NavLink
+                        to="/login"
+                     
+                        className="btn btn-outline-info btn-success nav-link "
+                      >
+                        {" "}
+                        Login
+                      </NavLink>
+                    )}
+                  </Nav.Link>
+                  <Nav.Link className="text-white">
+                    {/* {user?.email && (
+                      <span className="text-secondary ms-3 border-danger border-4 rounded-2">
+                        {user.displayName}{" "}
+                      </span>
+                    )} */}
+
+                    {user?.email && (
+                      <li id='MyTool' onMouseOver={handleToltip} className=" ms-3  ">
+                        {" "}
+                        {
+                          <img
+                           
+                            className="photourl"
+                            src={user.photoURL}
+                            alt=""
+                          />
+                        }{" "}
+                      </li>
+                    )}
                   </Nav.Link>
                 </Nav>
               </Offcanvas.Body>
