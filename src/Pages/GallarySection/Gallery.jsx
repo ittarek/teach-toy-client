@@ -2,7 +2,7 @@ import React from "react";
 import Carousel from "react-bootstrap/Carousel";
 const Gallery = () => {
   return (
-    <div className="my-5">
+    <div className="my-5 ">
       <h1 className="text-canter text-info mx-auto w-25">Gallery </h1>
 
       <Carousel>

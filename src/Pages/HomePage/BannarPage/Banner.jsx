@@ -14,7 +14,7 @@ const Banner = () => {
         </p>
       </div>
 
-      <div className="banner image">
+      <div>
         <img
           className="banner-image"
           src="  https://htmldemo.net/kidol/kidol/assets/img/blog/details/8.jpg"
