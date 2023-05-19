@@ -63,7 +63,7 @@ const NavigationBar = () => {
                     <Link to="/"> Home</Link>
                   </Nav.Link>
                   <Nav.Link className="text-white">
-                    <Link to="toy"> All Toys</Link>
+                    <Link to="/allToys"> All Toys</Link>
                   </Nav.Link>
                   {user?.email ? (
                     <>
@@ -83,12 +83,12 @@ const NavigationBar = () => {
                   </Nav.Link>
                   <Nav.Link className="text-white">
                     {user?.email ? (
-                      <NavLink
+                      <Link
                         onClick={handleLogOut}
-                        className="btn-outline-info  btn-success  "
+                        className="btn btn-outline-info  "
                       >
                         LogOut
-                      </NavLink>
+                      </Link>
                     ) : (
                       <Link
                         to="/login"

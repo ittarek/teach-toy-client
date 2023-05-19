@@ -10,6 +10,7 @@ import AddToy from "../Pages/AddToyPage/AddToy";
 import PrivetRoute from "./PrivetRoute/PrivetRoute";
 import MyToys from "../Pages/MyToysPage/MyToys";
 import RoboticToy from "../Pages/ShopCategoryPage/RoboticToyPage/RoboticToy";
+import AllToys from "../Pages/AllToysPage/AllToys";
 
 export const router = createBrowserRouter([
   {
@@ -49,6 +50,10 @@ export const router = createBrowserRouter([
       {
         path: "/roboticToy/:id",
         element: <RoboticToy></RoboticToy>,
+      },
+      {
+        path: "/allToys",
+        element: <PrivetRoute><AllToys></AllToys></PrivetRoute>,
       },
       {
         path: "/blog",

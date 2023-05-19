@@ -1,12 +1,11 @@
 import React, { useContext, useState } from "react";
-
 import CreatableSelect from "react-select/creatable";
-
-import { useForm, Controller } from "react-hook-form";
-
+import { useForm } from "react-hook-form";
 import "./AddToy.css";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { Container } from "react-bootstrap";
+import { Form } from "react-router-dom";
+
 const AddToy = () => {
   const { user } = useContext(AuthContext);
   const [selectedOption, setSelectedOption] = useState(null);
@@ -18,7 +17,7 @@ const AddToy = () => {
     formState: { errors },
   } = useForm();
 
-  // console.log(selectedOption);
+  // sub-category items
   const options = [
     { value: "Smartphone for Kids", label: "Smartphone for Kids" },
     { value: "Tablet for Kids", label: "Electronic Learning Kit" },
@@ -30,6 +29,22 @@ const AddToy = () => {
     { value: "Virtual Reality Headset", label: "Virtual Reality Headset" },
     { value: "Digital Drawing Tablet", label: "Digital Drawing Tablet" },
   ];
+//  add toy data in database function
+  const onSubmit = (data) => {
+    data.toy = selectedOption;
+
+    fetch("http://localhost:5000/addToy", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        console.log(result);
+      });
+    console.log(data);
+  };
+ 
 
   return (
     <Container className="">
@@ -40,7 +55,7 @@ const AddToy = () => {
       </h1>
       <div className=" row w-100 mx-auto  justify-content-center align-items-center">
         <div className="col-lg-6 ">
-          <form>
+          <form onSubmit={handleSubmit(onSubmit)}>
             {errors.exampleRequired && <span>This field is required</span>}
             <input
               className="input-fill"
@@ -52,13 +67,20 @@ const AddToy = () => {
               className="input-fill"
               {...register("SellerName")}
               placeholder="Seller Name"
-              defaultValue=""
+              defaultValue={user.displayName}
             />
-            <input
+            {/* <input
               className="input-fill"
               value=""
-              {...register("postedBy")}
+          //     {...register("sellerMail")}
               placeholder="Seller email"
+              type="text"
+            /> */}
+              <input
+              className="input-fill"
+              value={user?.email}
+              {...register("sellerMail")}
+              placeholder="your email"
               type="email"
             />
             <input
@@ -97,7 +119,7 @@ const AddToy = () => {
 
             <CreatableSelect
               className="select-category "
-              //     defaultValue="Sub-Category"
+              defaultValue=""
               onChange={setSelectedOption}
               options={options}
               placeholder="Sub-Category"
