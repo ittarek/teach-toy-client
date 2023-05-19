@@ -5,9 +5,11 @@ import "./Register.css";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FaCross } from "react-icons/fa";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
 
 const Register = () => {
-  //   const { createUser, updateUser } = useContext(AuthContext);
+    const { createUser, updateUser } = useContext(AuthContext);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   // console.log("register page",photo);
@@ -41,7 +43,14 @@ const Register = () => {
       setError("please give email and password");
       return;
     } else {
-      return setSuccess("Registration has been successFul");
+      return Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Registration has been successFul',
+        showConfirmButton: false,
+        timer: 1500
+      })
+      // return setSuccess("Registration has been successFul");
     }
   };
   return (
@@ -56,58 +65,58 @@ const Register = () => {
       
             </span>
             <input
-              className="border-0 outline-0 w-100 h-100 text-white  border-bottom border-info"
+              className="border-0 outline-0 w-100 h-100  border-bottom border-info"
               type="name"
               name="name"
-              id=""
+            
               required
             />
-            <label for="name">Name</label>
+            <label htmlFor="name">Name</label>
           </div>
           <div className="input-box">
             <span className="icon">
               {/* <ion-icon name="photoUrl"></ion-icon> */}
             </span>
             <input
-              className="border-0 outline-0 w-100 h-100 text-white  border-bottom border-info"
+              className="border-0 outline-0 w-100 h-100  border-bottom border-info"
               type="url"
               name="photoURL"
-              id=""
-              onChange="readURL(this)"
-              accept="Image/*"
+          
+              // onChange="readURL(this)"
+              // accept="Image/*"
               required
             />
-            <label for="photoUrl">Photo URL</label>
+            <label htmlFor="photoUrl">Photo URL</label>
           </div>
           <div className="input-box">
             <span className="icon">
-            <i class="fa-solid fa-envelope"></i>
+            <i className="fa-solid fa-envelope"></i>
             </span>
             <input
-              className="border-0 outline-0 w-100 h-100 text-white border-bottom border-info"
+              className="border-0 outline-0 w-100 h-100  border-bottom border-info"
               type="email"
               name="email"
-              id=""
+          
               required
             />
-            <label for="Email">Email</label>
+            <label htmlFor="Email">Email</label>
           </div>
           <div className="input-box">
             <span className="icon">
-   <i class="fa-solid fa-lock"></i>
+   <i className="fa-solid fa-lock"></i>
             </span>
             <input
-              className="border-0 outline-0 w-100 h-100 text-white  border-bottom border-info"
+              className="border-0 outline-0 w-100 h-100  border-bottom border-info"
               type="password"
               name="password"
-              id=""
+        
               required
             />
-            <label for="password">Password</label>
+            <label htmlFor="password">Password</label>
           </div>
           <div className="remember-forgat">
-            <label for="">
-              <input type="checkbox" name="" id="" />
+            <label htmlFor="">
+              <input type="checkbox" name="remember"/>
               remember me
             </label>
             <Link to='#'>Forgat Password</Link>

@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Form, Link, useLocation, useNavigate } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
 
 const Login = () => {
   const { createLogin, googleLogin } = useContext(AuthContext);
@@ -33,7 +34,13 @@ const Login = () => {
         })
         .catch((error) => {
           setError(error.message);
-        });
+        }); return   Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'LogIn has been successFul',
+          showConfirmButton: false,
+          timer: 1500
+        })
     }
   };
   //     login with Google

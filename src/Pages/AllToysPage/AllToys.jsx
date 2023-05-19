@@ -1,8 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./AllToys.css";
-import { Table } from "react-bootstrap";
+import { Button, Table } from "react-bootstrap";
 
 const AllToys = () => {
+  const [allToys, setAllToys] = useState([]);
+  console.log("all toy", allToys);
+  useEffect(() => {
+    fetch("http://localhost:5000/allToy")
+      .then((res) => res.json())
+      .then((data) => {
+        setAllToys(data);
+      });
+  }, []);
+
   return (
     <div>
       <div className="">
@@ -18,22 +28,23 @@ const AllToys = () => {
               <th>Sub-Category</th>
               <th>Price</th>
               <th>Quantity</th>
-           
-         
             </tr>
           </thead>
           <tbody>
-            <tr>
-              {/* <td>{index + 1}</td> */}
-                  <td>tarek</td>
-                  <td>robotic</td>
-                  <td>electronics</td>
-                  <td>1000</td>
-                  <td>10</td>
-                  <td className="btn btn-primary">view details</td>
            
-             
-            </tr>
+              {/* <td>{index + 1}</td> */}
+
+              {allToys.map((toy) => (
+            <tr>
+                  <td>{toy.SellerName}</td>
+                  <td>{toy.ToyName}</td>
+                  <td>{toy.toy.value}</td>
+                  <td>{toy.price}</td>
+                  <td>{toy.quantity}</td>
+                  <td><Button>view details</Button></td>
+                  </tr>
+              ))}
+        
           </tbody>
         </Table>
       </div>

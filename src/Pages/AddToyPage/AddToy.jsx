@@ -5,6 +5,7 @@ import "./AddToy.css";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { Container } from "react-bootstrap";
 import { Form } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const AddToy = () => {
   const { user } = useContext(AuthContext);
@@ -29,7 +30,7 @@ const AddToy = () => {
     { value: "Virtual Reality Headset", label: "Virtual Reality Headset" },
     { value: "Digital Drawing Tablet", label: "Digital Drawing Tablet" },
   ];
-//  add toy data in database function
+  //  add toy data in database function
   const onSubmit = (data) => {
     data.toy = selectedOption;
 
@@ -40,11 +41,18 @@ const AddToy = () => {
     })
       .then((res) => res.json())
       .then((result) => {
-        console.log(result);
+        if (result.insertedId) {
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: `${user.displayName} Your Toy Add SuccessFul`,
+            showConfirmButton: false,
+            timer: 1500,
+          });
+          console.log(result);
+        }
       });
-    console.log(data);
   };
- 
 
   return (
     <Container className="">
@@ -76,7 +84,7 @@ const AddToy = () => {
               placeholder="Seller email"
               type="text"
             /> */}
-              <input
+            <input
               className="input-fill"
               value={user?.email}
               {...register("sellerMail")}
