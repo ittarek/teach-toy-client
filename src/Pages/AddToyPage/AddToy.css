@@ -1,0 +1,31 @@
+.input-fill {
+  padding: 15px;
+  margin: 10px;
+  border-radius: 15px;
+  border-color: darkgray;
+}
+
+.add-button{
+          width: 450px;
+}
+.add-button:hover {
+   background-color: aqua;
+        color: black;
+}
+.select-category{
+          width:450px;
+          
+}
+@media screen and (max-width: 576px) {
+          .input-fill{
+                    margin-left: 50px;
+          }
+          .select-category{
+                    width:100%;
+                    
+          }
+          .add-button{
+                    width: 100%;
+          }
+          
+}

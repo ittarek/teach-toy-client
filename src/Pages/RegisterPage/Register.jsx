@@ -48,7 +48,7 @@ const Register = () => {
     <div className="register mx-auto my-5">
       <div className="reg-box login">
         <h2 className="text-success text-center">Register</h2>
-        <form onSubmit={handleRegister} action="#">
+        <form onSubmit={handleRegister} >
           <div className="input-box">
             <span className="icon">
      

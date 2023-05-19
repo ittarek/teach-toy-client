@@ -53,10 +53,10 @@ const Login = () => {
     <div className="login-page mx-auto my-5 bg-dark">
       <div className="form-box login">
         <h2 className="text-white text-center">Login</h2>
-        <Form onSubmit={handleLogin} action="#">
+        <Form onSubmit={handleLogin} >
           <div className="input-box">
             <span className="icon">
-              {/* <ion-icon name="email"></ion-icon> */}
+ 
             </span>
             <input
               className="border-0 outline-0 w-100 h-100 text-white bg-dark border-bottom border-info"

@@ -8,17 +8,16 @@ import RoboticToy from "./RoboticToyPage/RoboticToy";
 const ShopCategory = () => {
   const [toggleState, setToggleState] = useState(1);
   const [roboticToy, setRoboticToy] = useState([]);
+  console.log(roboticToy);
   const toggleTab = (index) => {
     setToggleState(index);
   };
 
   useEffect(() => {
-    fetch("../../../public/robotic-toy.json")
+    fetch("https://b7-a11-toy-marketplace-server-side.vercel.app/roboticToy")
       .then((res) => res.json())
       .then((data) => {
         setRoboticToy(data);
-
-        console.log(data);
       });
   }, []);
   return (
@@ -37,10 +36,10 @@ const ShopCategory = () => {
               {" "}
               Robotic Toy{" "}
               <ul className="subCategory">
-                {roboticToy.map((robot) => ( <li key={robot.id}>
-                      <Link to={`/roboticToy/${robot.id}`}  >{robot.name} </Link>
-                    </li>
-              
+                {roboticToy.map((robot) => (
+                  <li key={robot._id}>
+                    <Link to={`/roboticToy/${robot._id}`}>{robot.name} </Link>
+                  </li>
                 ))}
               </ul>
             </Link>

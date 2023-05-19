@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import "./NavigationBar.css";
 
-import { Button, Container, Form, Nav, NavLink, Navbar } from "react-bootstrap";
+import {Container, Form, Nav, NavLink, Navbar } from "react-bootstrap";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";

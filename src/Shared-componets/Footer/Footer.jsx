@@ -46,7 +46,7 @@ const Footer = () => {
                     <img
                       src="https://i.ibb.co/9WHsz7N/ai-robot-2540154-2124943.png"
                       className="img-fluid w-25"
-                      alt="logo"
+                      alt=""
                     />
                   </Link>
                 </div>
@@ -59,13 +59,13 @@ const Footer = () => {
                 </div>
                 <div className="footer-social-icon">
                   <span>Follow us</span>
-                  <Link to='https://www.facebook.com/home.php'>
+                  <Link to="https://www.facebook.com/home.php">
                     <i className="fab fa-facebook-f facebook-bg"></i>
                   </Link>
-                  <Link to='https://www.twitter.com/home.php'>
+                  <Link to="https://www.twitter.com/home.php">
                     <i className="fab fa-twitter twitter-bg"></i>
                   </Link>
-                  <Link to='https://www.google.com/'>
+                  <Link to="https://www.google.com/">
                     <i className="fab fa-google-plus-g google-bg"></i>
                   </Link>
                 </div>
@@ -78,11 +78,11 @@ const Footer = () => {
                 </div>
                 <ul>
                   <li>
-                    <Link to='/'>Home</Link>
+                    <Link to="/">Home</Link>
                   </li>
 
                   <li>
-                    <Link to=''>portfolio</Link>
+                    <Link to="">portfolio</Link>
                   </li>
 
                   <li>

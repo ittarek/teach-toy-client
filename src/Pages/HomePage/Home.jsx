@@ -18,7 +18,7 @@ const Home = () => {
       <Container>
         <h3 className="text-info">Featured Collection</h3>
 
-        <FeatureToy />
+        <FeatureToy></FeatureToy>
       </Container>
     </>
   );
