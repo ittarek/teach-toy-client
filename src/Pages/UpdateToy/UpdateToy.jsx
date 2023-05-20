@@ -10,8 +10,10 @@ const UpdateToy = (props ) => {
     watch,
     formState: { errors },
   } = useForm();
-const {handleJobUpdate, myToy} = props
-  //   console.log(handleJobUpdate);
+const {handleUpdateMyToy, myToy} = props
+
+
+ 
   return (
     <Modal
       {...props}
@@ -30,7 +32,7 @@ const {handleJobUpdate, myToy} = props
       <Modal.Body>
         <form
           className="container text-center"
-          onSubmit={handleSubmit(handleJobUpdate)}
+          onSubmit={handleSubmit(handleUpdateMyToy)}
         >
           {errors.exampleRequired && <span>This field is required</span>}
           <input
@@ -52,6 +54,9 @@ const {handleJobUpdate, myToy} = props
             placeholder="detail description"
           />
           <input className="submit-btn" value="Update Toy" type="submit" />
+
+           
+          
         </form>
       </Modal.Body>
       <Modal.Footer></Modal.Footer>
