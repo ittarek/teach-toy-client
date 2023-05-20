@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import NavigationBar from "../../Shared-componets/Header/NavigationBar";
 import Footer from "../../Shared-componets/Footer/Footer";
 
 const MainLayOut = () => {
+  const location = useLocation();
+  // path name change  by dynamic
+  useEffect(() => {
+    document.title = `Tech Toys ${location.pathname.replace('/', '- ' )}`
+  }, [location.pathname]);
   return (
     <>
       <NavigationBar></NavigationBar>
@@ -12,7 +17,6 @@ const MainLayOut = () => {
         <Outlet></Outlet>{" "}
       </div>
       <Footer></Footer>
-   
     </>
   );
 };
