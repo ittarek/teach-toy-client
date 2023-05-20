@@ -1,6 +1,14 @@
 .brand-image {
   width: 80px;
 }
+
+nav a.active {
+  
+  text-decoration: underline;
+  font-weight: bold;
+
+}
+
 /* .navbar-margin{
           margin-top: -50px;
 } */

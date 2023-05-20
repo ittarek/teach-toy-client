@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import "./NavigationBar.css";
 
-import {Container, Form, Nav, NavLink, Navbar } from "react-bootstrap";
+import { Container, Form, Nav,  Navbar } from "react-bootstrap";
 import Offcanvas from "react-bootstrap/Offcanvas";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 import tippy from "tippy.js";
@@ -20,17 +20,19 @@ const NavigationBar = () => {
         console.log(error.message);
       });
   };
+
+  // user photo hover 
   const handleToltip = () => {
     tippy("#MyTool", {
-      content: user?.displayName || "hello",
+      content: user?.displayName || "NoName",
     });
   };
   return (
     <div className="navbar-margin">
       {["lg"].map((expand) => (
-        <Navbar key={expand} bg="dark" expand={expand} className="mb-3">
+        <Navbar key={expand} bg="dark" expand={expand} >
           <Container>
-            <Navbar.Brand href="#">
+            <Navbar.Brand href="/">
               <img
                 className="img-fluid brand-image rounded-5 "
                 src="https://i.ibb.co/9WHsz7N/ai-robot-2540154-2124943.png"
@@ -41,7 +43,7 @@ const NavigationBar = () => {
               </span>{" "}
             </Navbar.Brand>
 
-            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
+            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} className="   btn  btn-outline-info" />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
               aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
@@ -58,48 +60,49 @@ const NavigationBar = () => {
                   />
                   <Button variant="outline-success">Search</Button>
                 </Form> */}
-                <Nav className="justify-content-end flex-grow-1 pe-3 text-white">
-                  <Nav.Link className="text-white">
-                    <Link to="/"> Home</Link>
-                  </Nav.Link>
-                  <Nav.Link className="text-white">
-                    <Link to="/allToys"> All Toys</Link>
-                  </Nav.Link>
+                <Nav className="d-flex justify-content-end flex-grow-1 pe-3 text-white">
+        
+                    <NavLink  to="/" className=" text-white text-decoration-none"> Home</NavLink>
+              
+                  <NavLink to="/allToys" className="text-white mx-3 text-decoration-none">
+                    All Toys
+                  </NavLink>
+            
                   {user?.email ? (
                     <>
                       {" "}
-                      <Nav.Link className="text-white">
-                        <Link to="/myToys">My Toys</Link>
-                      </Nav.Link>
-                      <Nav.Link className="text-white">
-                        <Link to="/addToy">ADD A Toys</Link>
-                      </Nav.Link>
+                    
+                        <NavLink to="/myToys" className="text-white mx-3 text-decoration-none">My Toys</NavLink>
+                    
+                
+                        <NavLink to="/addToy" className="text-white mx-3 text-decoration-none">ADD A Toys</NavLink>
+               
                     </>
                   ) : (
                     ""
                   )}
-                  <Nav.Link className="text-white">
-                    <Link to="/blog"> Blogs</Link>
-                  </Nav.Link>
-                  <Nav.Link className="text-white">
+         
+                    <NavLink to="/blog" className="text-white mx-3 text-decoration-none" > Blogs</NavLink>
+        
+          
                     {user?.email ? (
-                      <Link
+                      <NavLink
                         onClick={handleLogOut}
-                        className="btn btn-outline-info  "
+                        className=" btn text-decoration-none"
                       >
                         LogOut
-                      </Link>
+                      </NavLink>
                     ) : (
-                      <Link
+                      <NavLink
                         to="/login"
-                        className="btn btn-outline-info btn-success  "
+                        className="btn text-decoration-none  "
                       >
                         {" "}
                         Login
-                      </Link>
+                      </NavLink>
                     )}
-                  </Nav.Link>
-                  <Nav.Link className="text-white">
+            
+        
                     {user?.email && (
                       <li
                         id="MyTool"
@@ -116,8 +119,7 @@ const NavigationBar = () => {
                         }{" "}
                       </li>
                     )}
-                  </Nav.Link>
-                </Nav>
+                   </Nav>
               </Offcanvas.Body>
             </Navbar.Offcanvas>
           </Container>

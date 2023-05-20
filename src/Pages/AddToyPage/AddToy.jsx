@@ -21,7 +21,7 @@ const AddToy = () => {
   // sub-category items
   const options = [
     { value: "Smartphone for Kids", label: "Smartphone for Kids" },
-    { value: "Tablet for Kids", label: "Electronic Learning Kit" },
+    { value: "Tablet for Kids", label: "Tablet for Kids" },
     { value: "Interactive Storybook", label: "Interactive Storybook" },
     { value: "Kid-Safe Headphones", label: "Kid-Safe Headphones" },
     { value: "Coding Robot", label: "Coding Robot" },
@@ -32,7 +32,7 @@ const AddToy = () => {
   ];
   //  add toy data in database function
   const onSubmit = (data) => {
-    data.toy = selectedOption;
+//     data.toy = selectedOption;
 
     fetch("http://localhost:5000/addToy", {
       method: "POST",
@@ -49,7 +49,7 @@ const AddToy = () => {
             showConfirmButton: false,
             timer: 1500,
           });
-          console.log(result);
+
         }
       });
   };
@@ -58,7 +58,7 @@ const AddToy = () => {
     <Container className="">
       {" "}
       <h1 className=" text-info shadow-lg rounded m-2 p-2 text-center">
-        You want To Add You{" "}
+        You want To Add Your{" "}
         <span className="text-success fw-bold fst-italic">Toys</span> ?
       </h1>
       <div className=" row w-100 mx-auto  justify-content-center align-items-center">

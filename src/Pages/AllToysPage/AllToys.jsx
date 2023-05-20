@@ -38,7 +38,7 @@ const AllToys = () => {
             <tr>
                   <td>{toy.SellerName}</td>
                   <td>{toy.ToyName}</td>
-                  <td>{toy.toy.value}</td>
+                  <td>{toy.toy?.value}</td>
                   <td>{toy.price}</td>
                   <td>{toy.quantity}</td>
                   <td><Button>view details</Button></td>
