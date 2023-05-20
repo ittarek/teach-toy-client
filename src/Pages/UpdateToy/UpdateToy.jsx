@@ -23,10 +23,10 @@ const {handleUpdateMyToy, myToy} = props
     >
       <Modal.Header closeButton>
         <Modal.Title
-          className="text-center w-100 m-auto"
+          className="text-center text-info w-100 m-auto"
           id="contained-modal-title-vcenter"
         >
-          Update Job
+          Update My Toy
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
@@ -53,7 +53,7 @@ const {handleUpdateMyToy, myToy} = props
             {...register("description")}
             placeholder="detail description"
           />
-          <input className="submit-btn" value="Update Toy" type="submit" />
+          <input className=" btn btn-outline-success" value="Update Toy" type="submit" />
 
            
           

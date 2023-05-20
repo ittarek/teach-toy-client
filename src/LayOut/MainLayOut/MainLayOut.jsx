@@ -7,8 +7,17 @@ import Footer from "../../Shared-componets/Footer/Footer";
 const MainLayOut = () => {
   const location = useLocation();
   // path name change  by dynamic
+
   useEffect(() => {
-    document.title = `Tech Toys ${location.pathname.replace('/', '- ' )}`
+    if (location.pathname === "/") {
+      document.title = `Tech Toys - Home`;
+    } else {
+      document.title = `Tech Toys ${location.pathname.replace("/", "- ")}`;
+    }
+
+    if (location.state) {
+      document.title = location.state;
+    }
   }, [location.pathname]);
   return (
     <>

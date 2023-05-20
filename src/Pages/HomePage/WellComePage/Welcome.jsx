@@ -29,7 +29,7 @@ const Welcome = () => {
           </div>
           <div className="summary text-left">
             <h1>
-              Speedster <span className="text-danger">Scooter</span> - only
+              Speedster Electronics <span className="text-danger">Scooter</span> - only
               available at select Tech Toys.
             </h1>{" "}
             <p className="text-secondary my-5">
@@ -61,7 +61,7 @@ const Welcome = () => {
         <div className="first-product d-lg-flex gap-5">
           <div className="summary text-left">
             <h1>
-              Speedster <span className="text-danger">Scooter</span> - only
+              Speedster  Electronics <span className="text-danger">Scooter</span> - only
               available at select Tech Toys.
             </h1>{" "}
             <p className="text-secondary my-5">
