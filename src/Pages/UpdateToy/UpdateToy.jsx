@@ -41,7 +41,7 @@ const {handleUpdateMyToy, myToy} = props
             placeholder="Price"
             defaultValue=""
           />
-          <input className=" d-none" {...register("_id")} value={myToy?._id} />
+          <input className="d-none " {...register("_id")} value={myToy?._id} />
           <input
             className="input-fill"
             {...register("quantity")}

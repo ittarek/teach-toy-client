@@ -131,7 +131,8 @@ const AddToy = () => {
               onChange={setSelectedOption}
               options={options}
               placeholder="Sub-Category"
-            />
+              />
+               {/* <input className=" " {...register("_id")} value={user?._id} /> */}
 
             <input
               className="add-button fw-bold bg-success text-white rounded-5 fs-3 p-2 m-2 border-0 shadow "

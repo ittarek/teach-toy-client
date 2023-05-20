@@ -51,15 +51,7 @@ const NavigationBar = () => {
               className="w-50 bg-transparent h-75"
             >
               <Offcanvas.Body>
-                {/* <Form className="d-flex">
-                  <Form.Control
-                    type="search"
-                    placeholder="Search"
-                    className="me-2"
-                    aria-label="Search"
-                  />
-                  <Button variant="outline-success">Search</Button>
-                </Form> */}
+            
                 <Nav className="d-flex justify-content-end flex-grow-1 pe-3 text-white">
         
                     <NavLink  to="/" className=" text-white text-decoration-none"> Home</NavLink>
@@ -95,7 +87,7 @@ const NavigationBar = () => {
                     ) : (
                       <NavLink
                         to="/login"
-                        className="btn text-decoration-none  "
+                        className="btn text-white btn-outline-success text-decoration-none  "
                       >
                         {" "}
                         Login
