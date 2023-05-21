@@ -51,31 +51,50 @@ export const router = createBrowserRouter([
         ),
       },
 
-
-  
       {
         path: "/allToys",
         element: <AllToys></AllToys>,
       },
       {
         path: "/toyDetails/:id",
-        element: <PrivetRoute><ToyDetails></ToyDetails></PrivetRoute>,
-        loader : ({params})=> fetch(`http://localhost:5000/allToy/${params?.id}`)
+        element: (
+          <PrivetRoute>
+            <ToyDetails></ToyDetails>
+          </PrivetRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`https://b7-a11-toy-marketplace-server-side.vercel.app/roboticToy/${params?.id}`),
       },
       {
-        path: '/detailsToy/:id',
-        element:<PrivetRoute> <DetailsToy></DetailsToy></PrivetRoute>,
-        loader: ({params})=> fetch(`http://localhost:5000/roboticToy/${params.id}`)
+        path: "/detailsToy/:id",
+        element: (
+          <PrivetRoute>
+            {" "}
+            <DetailsToy></DetailsToy>
+          </PrivetRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`https://b7-a11-toy-marketplace-server-side.vercel.app/roboticToy/${params.id}`),
       },
       {
-        path: '/amplifierToy/:id',
-        element:<PrivetRoute><AplifierToyDetails></AplifierToyDetails></PrivetRoute>,
-        loader: ({params})=> fetch(`http://localhost:5000/amplifierToy/${params.id}`)
+        path: "/amplifierToy/:id",
+        element: (
+          <PrivetRoute>
+            <AplifierToyDetails></AplifierToyDetails>
+          </PrivetRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`https://b7-a11-toy-marketplace-server-side.vercel.app/amplifierToy/${params.id}`),
       },
       {
-        path: '/motionToy/:id',
-        element:<PrivetRoute><MotionToyDetails></MotionToyDetails></PrivetRoute>,
-        loader: ({params})=> fetch(`http://localhost:5000/motionToy/${params.id}`)
+        path: "/motionToy/:id",
+        element: (
+          <PrivetRoute>
+            <MotionToyDetails></MotionToyDetails>
+          </PrivetRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`https://b7-a11-toy-marketplace-server-side.vercel.app/motionToy/${params.id}`),
       },
       {
         path: "/blog",

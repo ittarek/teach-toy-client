@@ -22,7 +22,7 @@ const AddToy = () => {
   const onSubmit = (data) => {
     data.category = selectedOption;
 console.log(data);
-    fetch("http://localhost:5000/addToy", {
+    fetch("https://b7-a11-toy-marketplace-server-side.vercel.app/addToy", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),

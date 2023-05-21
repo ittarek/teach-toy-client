@@ -19,7 +19,7 @@ const AllToys = () => {
 
   // search function
   const handleSearchByPrice = () => {
-    fetch(`http://localhost:5000/searchToy/${change}`)
+    fetch(`https://b7-a11-toy-marketplace-server-side.vercel.app/searchToy/${change}`)
       .then((res) => res.json())
       .then((data) => {
         setAllToys(data);

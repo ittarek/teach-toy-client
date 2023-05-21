@@ -17,6 +17,7 @@ import app from "../firebase/firebase.config";
 import { Spinner } from "react-bootstrap";
 
 const auth = getAuth(app);
+// google provider
 const googleProvider = new GoogleAuthProvider();
 
 export const AuthContext = createContext(null);
@@ -26,36 +27,37 @@ const AuthProvider = ({ children }) => {
   const [photoUrl, setPhotoUrl] = useState(null);
   // console.log("photo", photoUrl);
 
-  //   register provider
-  const createUser = (email, password) => {
+  //   user create this function by register
+  const registration = (email, password) => {
     setSpinner(true);
 
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
-  //   login provider
-  const createLogin = (email, password) => {
+  //   user login this function by login
+  const userLogin = (email, password) => {
     setSpinner(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
 
-  //   google provider
+  //   user login this function by google
 
   const googleLogin = () => {
     setSpinner(true);
     return signInWithPopup(auth, googleProvider);
   };
 
-  //   logOut provider
+  //  user logOut this function
   const loggedOut = () => {
     setSpinner(true);
     signOut(auth);
   };
 
+  // user osbserb this useEffect
   useEffect(() => {
-    const unSubscribe = onAuthStateChanged(auth, (loggedUser) => {
-      console.log("logged isn user inside auth state ", loggedUser);
-      setUser(loggedUser);
+    const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
+      console.log("user login  ", currentUser);
+      setUser(currentUser);
       setSpinner(false);
     });
     return () => {
@@ -63,13 +65,14 @@ const AuthProvider = ({ children }) => {
     };
   }, []);
 
-  const updateUser = (user, name, photoUrl) => {
+  // user data upadte this function
+  const userUpdating = (user, name, photoUrl) => {
     updateProfile(user, {
       displayName: name,
       photoURL: photoUrl,
     })
       .then(() => {
-        console.log("user name and photo updated");
+        console.log("Your name and photo has been updated");
       })
       .catch((error) => {
         setError(error.message);
@@ -78,14 +81,14 @@ const AuthProvider = ({ children }) => {
 
   const authInfo = {
     user,
-    createUser,
-    createLogin,
+    registration,
+    userLogin,
     loggedOut,
     googleLogin,
     setSpinner,
     spinner,
     photoUrl,
-    updateUser,
+    userUpdating,
   };
 
   return (

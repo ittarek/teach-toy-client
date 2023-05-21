@@ -9,7 +9,7 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
 
 const Login = () => {
-  const { createLogin, googleLogin } = useContext(AuthContext);
+  const { userLogin, googleLogin } = useContext(AuthContext);
   const [error, setError] = useState("");
 
   //   redirect to Chef details page
@@ -25,22 +25,29 @@ const Login = () => {
     form.reset();
 
     if ((email, password)) {
-      createLogin(email, password)
+      userLogin(email, password)
         .then((result) => {
           const loggedUser = result.user;
           console.log(loggedUser);
           form.reset();
           navigate(from, { replace: true });
-        })
+          return   Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Login Successful',
+            showConfirmButton: false,
+            timer: 1500
+          }) })  
         .catch((error) => {
           setError(error.message);
-        }); return   Swal.fire({
-          position: 'top-end',
-          icon: 'success',
-          title: 'LogIn has been successFul',
-          showConfirmButton: false,
-          timer: 1500
-        })
+          return   Swal.fire({
+            position: 'top-end',
+            icon: 'warning',
+            title: 'Something wrong',
+            showConfirmButton: false,
+            timer: 1500
+          })
+        }); 
     }
   };
   //     login with Google
@@ -71,7 +78,7 @@ const Login = () => {
               name="email"
               required
             />
-            <label htmlFor="Email" className="text-white">
+            <label htmlFor="Email" className="input-label text-white">
               Email
             </label>
           </div>
@@ -83,25 +90,25 @@ const Login = () => {
               name="password"
               required
             />
-            <label htmlFor="password" className="text-white">
+            <label htmlFor="password" className=" input-label text-white">
               Password
             </label>
           </div>
 
-          <Button type="submit" className="log-btn text-white">
-            LogIn
-          </Button>
+          <button type="submit" className="email-login-btn btn btn-outline-success text- w-100 fw-bold fs-4 info">
+            Login
+          </button>
 
-          <Button
+          <button
             onClick={handleGoogleLogin}
-            className="log-btn text-white mt-2 mb-2 btn-outline-info btn-info"
+            className="btn w-100 fs-4  mt-2 mb-2 btn-outline-info "
           >
             {" "}
             <span className="me-3">
               <FaGoogle></FaGoogle>{" "}
             </span>{" "}
             Login With Google
-          </Button>
+          </button>
 
           <div className="login-register text-white">
             <p className="text-white">

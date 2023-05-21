@@ -13,7 +13,7 @@ const MyToys = () => {
   const [updatePage, setUpdatePage] = useState(false);
   //   console.log("my toy page", myToys);
   useEffect(() => {
-    fetch(`http://localhost:5000/myToy/${user?.email}`)
+    fetch(`https://b7-a11-toy-marketplace-server-side.vercel.app/myToy/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setMyToys(data);
@@ -22,7 +22,7 @@ const MyToys = () => {
   // update my toy function
   const handleUpdateMyToy = (data) => {
     console.log("update", data);
-    fetch(`http://localhost:5000/updateMyToy/${data._id}`, {
+    fetch(`https://b7-a11-toy-marketplace-server-side.vercel.app/updateMyToy/${data._id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
@@ -48,7 +48,7 @@ const MyToys = () => {
   const handleDeleteMyToy = (_id) => {
     const sure = confirm("are you sure Delete This Toy");
     if (sure) {
-      fetch(`http://localhost:5000/updateMyToy/${_id}`, {
+      fetch(`https://b7-a11-toy-marketplace-server-side.vercel.app/updateMyToy/${_id}`, {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
     

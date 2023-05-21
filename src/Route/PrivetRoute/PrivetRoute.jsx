@@ -8,6 +8,7 @@ const PrivetRoute = ({ children }) => {
 
   const location = useLocation();
 
+  // data loader no problem by spinner
   if (spinner) {
     return (
       <Spinner
@@ -17,12 +18,15 @@ const PrivetRoute = ({ children }) => {
       ></Spinner>
     );
   }
+  // if user not login at first confirm this message then login user
+
   if (!user) {
-    confirm("You Have To Login First To Go Details");
+    alert("You Have To Login First To Go Details");
   } else if (user) {
     return children;
-  }
-  return <Navigate state={{ from: location }} replace to="/login"></Navigate>;
+  } 
+    return <Navigate state={{ from: location }} replace to="/login"></Navigate>;
+
 };
 
 export default PrivetRoute;

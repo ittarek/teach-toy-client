@@ -10,13 +10,13 @@ const ShopCategory = () => {
   const [roboticToy, setRoboticToy] = useState([]);
   const [amplifier, setAmplifier] = useState([]);
   const [motion, setMotion] = useState([]);
-  console.log(roboticToy);
+  // console.log(roboticToy);
   const toggleTab = (index) => {
     setToggleState(index);
   };
 
   useEffect(() => {
-    fetch("http://localhost:5000/roboticToy")
+    fetch("https://b7-a11-toy-marketplace-server-side.vercel.app/roboticToy")
       .then((res) => res.json())
       .then((data) => {
         setRoboticToy(data);
@@ -24,13 +24,13 @@ const ShopCategory = () => {
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:5000/amplifierToy")
+    fetch("https://b7-a11-toy-marketplace-server-side.vercel.app/amplifierToy")
       .then((res) => res.json())
       .then((data) => setAmplifier(data));
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:5000/motionToy")
+    fetch("https://b7-a11-toy-marketplace-server-side.vercel.app/motionToy")
       .then((res) => res.json())
       .then((data) => {
         setMotion(data);

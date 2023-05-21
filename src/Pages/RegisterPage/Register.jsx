@@ -3,13 +3,12 @@ import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./Register.css";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { FaCross } from "react-icons/fa";
+
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
 
 const Register = () => {
-    const { createUser, updateUser } = useContext(AuthContext);
+    const { registration, userUpdating } = useContext(AuthContext);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   // console.log("register page",photo);
@@ -27,11 +26,11 @@ const Register = () => {
 
     form.reset();
 
-    createUser(email, password)
+    registration(email, password)
       .then((result) => {
         const registerUser = result.user;
         console.log(registerUser);
-        updateUser(result.user, name, photoURL);
+        userUpdating(result.user, name, photoURL);
       })
       .catch((error) => {
         console.log(error.message);
@@ -74,16 +73,14 @@ const Register = () => {
             <label htmlFor="name">Name</label>
           </div>
           <div className="input-box">
-            <span className="icon">
-              {/* <ion-icon name="photoUrl"></ion-icon> */}
-            </span>
+      
+      
             <input
               className="border-0 outline-0 w-100 h-100  border-bottom border-info"
               type="url"
               name="photoURL"
           
-              // onChange="readURL(this)"
-              // accept="Image/*"
+         
               required
             />
             <label htmlFor="photoUrl">Photo URL</label>
