@@ -8,8 +8,8 @@ const Gallery = () => {
       <h1 className="text-info my-5 shadow-lg  gallery mx-auto w-100 d-flex justify-content-center align-items-center">
         Gallery{" "}
       </h1>
-      <div className="image-div mx-auto">
-        <div className="main-image d-lg-flex justify-content-center  ">
+      <div className="image-div  mx-auto">
+        <div className="main-image w-50 mx-auto d-lg-flex justify-content-center  ">
           <img
             className="img-fluid w-50 mx-auto rounded roundel-lg"
             src="https://images.unsplash.com/photo-1577638104555-83af2d50b5e7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=327&q=80"
