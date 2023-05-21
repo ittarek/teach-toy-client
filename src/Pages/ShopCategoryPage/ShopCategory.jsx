@@ -93,7 +93,7 @@ const ShopCategory = () => {
                   <Card.Body>
                     <Card.Text>
                       <p className="fw-bold fs-3">{robot.name}</p>
-                      <Link to={`/detailsToy/${robot._id}`}>
+                      <Link to={`/detailsToy/${robot._id}`} >
                         {" "}
                         <button className="btn btn-outline-info">
                           View details

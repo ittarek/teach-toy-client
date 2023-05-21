@@ -122,7 +122,7 @@ const Footer = () => {
 
       <div className="copyright-text">
         <p className="text-center">
-          Copyright &copy; 2018, All Right Reserved <a href="/">Tech Toys</a>
+          Copyright &copy; 2023, All Right Reserved <Link to='/'>Tech Toys</Link>
         </p>
       </div>
     </footer>

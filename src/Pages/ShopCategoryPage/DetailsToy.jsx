@@ -4,10 +4,11 @@ import { useLoaderData } from "react-router-dom";
 
 const DetailsToy = () => {
   const data = useLoaderData();
-  console.log(data);
+  // console.log(data);
   const { _id, name, picture, rating, price } = data || {};
   return (
-    <Card className=" w-75 mx-auto my-5" style={{ width: "18rem" }}>
+  <div >
+      <Card className=" w-75 mx-auto my-5" style={{ width: "18rem" }} state={data.name} >
       <Card.Img variant="top" className="img-fluid" src={picture} />
       <Card.Body>
         <Card.Title className="fw-bold text-info">{name}</Card.Title>
@@ -26,6 +27,7 @@ const DetailsToy = () => {
         <Card.Link href="#">Another Link</Card.Link> */}
       </Card.Body>
     </Card>
+  </div>
   );
 };
 

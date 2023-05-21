@@ -9,7 +9,7 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
 
 const Login = () => {
-  const { userLogin, googleLogin } = useContext(AuthContext);
+  const {user, userLogin, googleLogin } = useContext(AuthContext);
   const [error, setError] = useState("");
 
   //   redirect to Chef details page
@@ -30,24 +30,26 @@ const Login = () => {
           const loggedUser = result.user;
           console.log(loggedUser);
           form.reset();
-          navigate(from, { replace: true });
-          return   Swal.fire({
-            position: 'top-end',
-            icon: 'success',
-            title: 'Login Successful',
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: `${user.displayName} your Login Successful`,
             showConfirmButton: false,
-            timer: 1500
-          }) })  
+            timer: 1500,
+          });
+          navigate(from, { replace: true });
+         
+        })
         .catch((error) => {
           setError(error.message);
-          return   Swal.fire({
-            position: 'top-end',
-            icon: 'warning',
-            title: 'Something wrong',
+          Swal.fire({
+            position: "top-end",
+            icon: "warning",
+            title: "Something wrong",
             showConfirmButton: false,
-            timer: 1500
-          })
-        }); 
+            timer: 1500,
+          });
+        });
     }
   };
   //     login with Google
@@ -56,10 +58,13 @@ const Login = () => {
       .then((result) => {
         const loggedUser = result.user;
         console.log(loggedUser);
+
         navigate(from, { replace: true });
+      
       })
       .catch((error) => {
         setError(error.message);
+        
       });
   };
 
@@ -67,11 +72,8 @@ const Login = () => {
     <div className="login-page mx-auto my-5 bg-dark">
       <div className="form-box login">
         <h2 className="text-white text-center">Login</h2>
-        <Form onSubmit={handleLogin} >
+        <Form onSubmit={handleLogin}>
           <div className="input-box">
-            <span className="icon">
- 
-            </span>
             <input
               className="border-0 outline-0 w-100 h-100 text-white bg-dark border-bottom border-info"
               type="email"
@@ -95,7 +97,10 @@ const Login = () => {
             </label>
           </div>
 
-          <button type="submit" className="email-login-btn btn btn-outline-success text- w-100 fw-bold fs-4 info">
+          <button
+            type="submit"
+            className="email-login-btn btn btn-outline-success text- w-100 fw-bold fs-4 info"
+          >
             Login
           </button>
 

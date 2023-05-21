@@ -10,7 +10,7 @@ const AllToys = () => {
   const [modalShow, setModalShow] = React.useState(false);
   console.log("all toy", allToys);
   useEffect(() => {
-    fetch("http://localhost:5000/allToy")
+    fetch("https://b7-a11-toy-marketplace-server-side.vercel.app/allToy")
       .then((res) => res.json())
       .then((data) => {
         setAllToys(data);

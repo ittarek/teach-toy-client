@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import "./NavigationBar.css";
 
-import { Container, Form, Nav,  Navbar } from "react-bootstrap";
+import { Container, Form, Nav, Navbar } from "react-bootstrap";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
@@ -21,7 +21,7 @@ const NavigationBar = () => {
       });
   };
 
-  // user photo hover 
+  // user photo hover
   const handleToltip = () => {
     tippy("#MyTool", {
       content: user?.displayName || "NoName",
@@ -30,7 +30,7 @@ const NavigationBar = () => {
   return (
     <div className="navbar-margin">
       {["lg"].map((expand) => (
-        <Navbar key={expand} bg="dark" expand={expand} >
+        <Navbar key={expand} bg="dark" expand={expand}>
           <Container>
             <Navbar.Brand href="/">
               <img
@@ -43,7 +43,10 @@ const NavigationBar = () => {
               </span>{" "}
             </Navbar.Brand>
 
-            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} className="   btn  btn-outline-info" />
+            <Navbar.Toggle
+              aria-controls={`offcanvasNavbar-expand-${expand}`}
+              className="   btn  btn-outline-info"
+            />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
               aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
@@ -51,67 +54,80 @@ const NavigationBar = () => {
               className="w-50 bg-transparent h-75"
             >
               <Offcanvas.Body>
-            
-                <Nav className="d-flex justify-content-end flex-grow-1 pe-3 text-white">
-        
-                    <NavLink  to="/" className=" text-white text-decoration-none mx-3"> Home</NavLink>
-              
-                  <NavLink to="/allToys" className="text-white mx-3 text-decoration-none">
+                <Nav className="d-flex justify-content-end align-items-center flex-grow-1 pe-3 text-white">
+                  <NavLink
+                    to="/"
+                    className=" text-white my-auto text-decoration-none mx-3"
+                  >
+                    {" "}
+                    Home
+                  </NavLink>
+
+                  <NavLink
+                    to="/allToys"
+                    className="text-white mx-3 my-auto text-decoration-none"
+                  >
                     All Toys
                   </NavLink>
-            
+
                   {user?.email ? (
                     <>
                       {" "}
-                    
-                        <NavLink to="/myToys" className="text-white mx-3 text-decoration-none">My Toys</NavLink>
-                    
-                
-                        <NavLink to="/addToy" className="text-white mx-3 text-decoration-none">ADD A Toys</NavLink>
-               
+                      <NavLink
+                        to="/myToys"
+                        className="text-white mx-3 my-auto text-decoration-none"
+                      >
+                        My Toys
+                      </NavLink>
+                      <NavLink
+                        to="/addToy"
+                        className="text-white mx-3 my-auto text-decoration-none"
+                      >
+                        ADD A Toys
+                      </NavLink>
                     </>
                   ) : (
                     ""
                   )}
-         
-                    <NavLink to="/blog" className="text-white mx-3 text-decoration-none" > Blogs</NavLink>
-        
-          
-                    {user?.email ? (
-                      <NavLink
-                        onClick={handleLogOut}
-                        className=" btn text-decoration-none"
-                      >
+
+                  <NavLink
+                    to="/blog"
+                    className="text-white mx-3 my-auto text-decoration-none"
+                  >
+                    {" "}
+                    Blogs
+                  </NavLink>
+
+                  {user?.email ? (
+                    <NavLink onClick={handleLogOut}>
+                      <button className=" mx-3 btn my-auto  text-white btn-outline-info text-decoration-none">
+                        {" "}
                         LogOut
-                      </NavLink>
-                    ) : (
-                      <NavLink
-                        to="/login"
-                        className="btn text-white btn-outline-success text-decoration-none  "
-                      >
-                        {" "}
-                        Login
-                      </NavLink>
-                    )}
-            
+                      </button>
+                    </NavLink>
+                  ) : (
+                    <NavLink
+                      to="/login"
         
-                    {user?.email && (
-                      <li
-                        id="MyTool"
-                        onMouseOver={handleToltip}
-                        className=" ms-3  "
-                      >
-                        {" "}
-                        {
-                          <img
-                            className="photourl"
-                            src={user.photoURL}
-                            alt=""
-                          />
-                        }{" "}
-                      </li>
-                    )}
-                   </Nav>
+                    >
+                      {" "}
+                      <button className=" mx-3 btn my-auto  text-white btn-outline-info text-decoration-none"> Login</button>
+                    </NavLink>
+                  )}
+
+                  {user?.email && (
+                    <li
+                      id="MyTool"
+                      onMouseOver={handleToltip}
+                      className=" ms-3  "
+                    >
+                      {" "}
+                      {
+                        <img className="photourl ms-1 my-auto" src={user.photoURL} alt="" />
+                      }{" "}
+                    </li>
+                  )}
+                </Nav>
               </Offcanvas.Body>
             </Navbar.Offcanvas>
           </Container>
