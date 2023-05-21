@@ -50,7 +50,8 @@ const MyToys = () => {
     if (sure) {
       fetch(`http://localhost:5000/updateMyToy/${_id}`, {
         method: "DELETE",
-        headers: {},
+        headers: { "Content-Type": "application/json" },
+    
       })
         .then((res) => res.json())
         .then((data) => {

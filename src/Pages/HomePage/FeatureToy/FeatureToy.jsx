@@ -8,7 +8,7 @@ const FeatureToy = () => {
   console.log(future);
   const [show, setShow] = useState(false);
   useEffect(() => {
-    fetch("https://b7-a11-toy-marketplace-server-side.vercel.app/futureToys")
+    fetch("http://localhost:5000/futureToys")
       .then((res) => res.json())
       .then((data) => {
         setFuture(data);

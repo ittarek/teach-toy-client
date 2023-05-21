@@ -9,9 +9,11 @@ import Register from "../Pages/RegisterPage/Register";
 import AddToy from "../Pages/AddToyPage/AddToy";
 import PrivetRoute from "./PrivetRoute/PrivetRoute";
 import MyToys from "../Pages/MyToysPage/MyToys";
-import RoboticToy from "../Pages/ShopCategoryPage/RoboticToyPage/RoboticToy";
+
 import AllToys from "../Pages/AllToysPage/AllToys";
 import ToyDetails from "../Pages/AllToysPage/ToyDetailsPage/ToyDetails";
+import DetailsToy from "../Pages/ShopCategoryPage/DetailsToy";
+import AplifierToyDetails from "../Pages/ShopCategoryPage/AplifierToyDetails";
 
 export const router = createBrowserRouter([
   {
@@ -48,18 +50,26 @@ export const router = createBrowserRouter([
         ),
       },
 
-      {
-        path: "/roboticToy/:id",
-        element: <RoboticToy></RoboticToy>,
-      },
+
+  
       {
         path: "/allToys",
         element: <AllToys></AllToys>,
       },
       {
         path: "/toyDetails/:id",
-        element: <ToyDetails></ToyDetails>,
-        loader : ({params})=> fetch(`http://localhost:5000/allToy/${params.id}`)
+        element: <PrivetRoute><ToyDetails></ToyDetails></PrivetRoute>,
+        loader : ({params})=> fetch(`http://localhost:5000/allToy/${params?.id}`)
+      },
+      {
+        path: '/detailsToy/:id',
+        element:<PrivetRoute> <DetailsToy></DetailsToy></PrivetRoute>,
+        loader: ({params})=> fetch(`http://localhost:5000/roboticToy/${params.id}`)
+      },
+      {
+        path: '/amplifierToy/:id',
+        element:<PrivetRoute><AplifierToyDetails></AplifierToyDetails></PrivetRoute>,
+        loader: ({params})=> fetch(`http://localhost:5000/amplifierToy/${params.id}`)
       },
       {
         path: "/blog",

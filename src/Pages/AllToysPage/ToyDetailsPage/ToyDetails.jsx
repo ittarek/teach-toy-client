@@ -13,18 +13,18 @@ const ToyDetails = () => {
     sellerMail,
     description,
     rating,
-    quantity,
+    quantity,category,
     price,
-  } = data;
+  } = data || {};
 
   console.log(data);
 
   return (
     <div className="d-flex justify-content-center">
-      <Card className="shadow-lg bg-dark" style={{ width: "18rem" }}>
-        <Card.Img variant="top" src={photo} />
+      <Card className="shadow-lg w-75 "  style={{ width: "rem" }}>
+        <Card.Img variant="top" className="img-fluid h-50 w-50 mx-auto" src={photo} />
         <Card.Body>
-          <Card.Title className="text-white">
+          <Card.Title className="">
             {" "}
             <span className="text-info fw-bold">Toy Name </span>: {ToyName}
           </Card.Title>
@@ -54,7 +54,7 @@ const ToyDetails = () => {
         </ListGroup>
         <Card.Body>
           {" "}
-          <Card.Text className="text-white">
+          <Card.Text className="">
             {" "}
             <span className="text-info fw-bold">Description</span> :{" "}
             {description}

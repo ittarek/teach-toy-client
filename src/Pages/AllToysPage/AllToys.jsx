@@ -8,7 +8,7 @@ const AllToys = () => {
   const [allToys, setAllToys] = useState([]);
   const [change, setChange] = useState("");
   const [modalShow, setModalShow] = React.useState(false);
-  // console.log("all toy", allToys);
+  console.log("all toy", allToys);
   useEffect(() => {
     fetch("http://localhost:5000/allToy")
       .then((res) => res.json())
@@ -62,7 +62,7 @@ const AllToys = () => {
                 <td>{index + 1}</td>
                 <td>{toy.SellerName}</td>
                 <td>{toy.ToyName}</td>
-                <td>{toy.toy?.value}</td>
+                <td>{toy.category?.value}</td>
                 <td>{toy.price}</td>
                 <td>{toy.quantity}</td>
                 <td>

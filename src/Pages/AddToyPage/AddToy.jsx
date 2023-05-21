@@ -18,6 +18,30 @@ const AddToy = () => {
     formState: { errors },
   } = useForm();
 
+  //  add toy data in database function
+  const onSubmit = (data) => {
+    data.category = selectedOption;
+console.log(data);
+    fetch("http://localhost:5000/addToy", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        if (result.insertedId) {
+          // console.log(result);
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: `${user.displayName} Your Toy Add SuccessFul`,
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
+      });
+  };
+
   // sub-category items
   const options = [
     { value: "Smartphone for Kids", label: "Smartphone for Kids" },
@@ -30,29 +54,6 @@ const AddToy = () => {
     { value: "Virtual Reality Headset", label: "Virtual Reality Headset" },
     { value: "Digital Drawing Tablet", label: "Digital Drawing Tablet" },
   ];
-  //  add toy data in database function
-  const onSubmit = (data) => {
-//     data.toy = selectedOption;
-
-    fetch("http://localhost:5000/addToy", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    })
-      .then((res) => res.json())
-      .then((result) => {
-        if (result.insertedId) {
-          Swal.fire({
-            position: "top-end",
-            icon: "success",
-            title: `${user.displayName} Your Toy Add SuccessFul`,
-            showConfirmButton: false,
-            timer: 1500,
-          });
-
-        }
-      });
-  };
 
   return (
     <Container className="">
@@ -131,8 +132,7 @@ const AddToy = () => {
               onChange={setSelectedOption}
               options={options}
               placeholder="Sub-Category"
-              />
-               {/* <input className=" " {...register("_id")} value={user?._id} /> */}
+            />
 
             <input
               className="add-button fw-bold bg-success text-white rounded-5 fs-3 p-2 m-2 border-0 shadow "
