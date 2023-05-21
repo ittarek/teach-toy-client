@@ -13,7 +13,9 @@ const MyToys = () => {
   const [updatePage, setUpdatePage] = useState(false);
   //   console.log("my toy page", myToys);
   useEffect(() => {
-    fetch(`https://b7-a11-toy-marketplace-server-side.vercel.app/myToy/${user?.email}`)
+    fetch(
+      `https://b7-a11-toy-marketplace-server-side.vercel.app/myToy/${user?.email}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setMyToys(data);
@@ -22,11 +24,14 @@ const MyToys = () => {
   // update my toy function
   const handleUpdateMyToy = (data) => {
     console.log("update", data);
-    fetch(`https://b7-a11-toy-marketplace-server-side.vercel.app/updateMyToy/${data._id}`, {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    })
+    fetch(
+      `https://b7-a11-toy-marketplace-server-side.vercel.app/updateMyToy/${data._id}`,
+      {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount > 0) {
@@ -48,11 +53,13 @@ const MyToys = () => {
   const handleDeleteMyToy = (_id) => {
     const sure = confirm("are you sure Delete This Toy");
     if (sure) {
-      fetch(`https://b7-a11-toy-marketplace-server-side.vercel.app/updateMyToy/${_id}`, {
-        method: "DELETE",
-        headers: { "Content-Type": "application/json" },
-    
-      })
+      fetch(
+        `https://b7-a11-toy-marketplace-server-side.vercel.app/updateMyToy/${_id}`,
+        {
+          method: "DELETE",
+          headers: { "Content-Type": "application/json" },
+        }
+      )
         .then((res) => res.json())
         .then((data) => {
           if (data.deletedCount > 0) {
@@ -70,53 +77,66 @@ const MyToys = () => {
         });
     }
   };
-
+  
   return (
-    <CardGroup className="row mx-2">
-      {myToys.map((myToy) => (
-        <Col >
-        <Card className="col-3 my-5 mx-auto" style={{ width: "25rem" }}>
-          <Card.Img
-            variant="top"
-            src={myToy.photo}
-            className="img-fluid my-toy-image"
-          />
-          <Card.Body>
-            <Card.Title>{myToy.ToyName}</Card.Title>
-            <p>Price : {myToy.price} $</p>
-            <p>Rating : {myToy.rating}</p>
-            <p>Quantity : {myToy.quantity}</p>
-            <p>Category : {myToy.toy?.value}</p>
-            <Card.Text>{myToy.description}</Card.Text>
-          </Card.Body>
-          <Card.Footer>
-            {/* <Link to="/addToy">
+    <div>
+      <div className="mx-auto w-100 d-flex justify-content-center">
+      <label for="toy"> short price:</label>
+
+<select name="toy" id="cars">
+  <option value="volvo">Ascending</option>
+  <option value="saab">Descending</option>
+ 
+</select>
+      </div>
+
+      <CardGroup className="row mx-2">
+        {myToys.map((myToy) => (
+          <Col>
+            <Card className="col-3 my-5 mx-auto" style={{ width: "25rem" }}>
+              <Card.Img
+                variant="top"
+                src={myToy.photo}
+                className="img-fluid my-toy-image"
+              />
+              <Card.Body>
+                <Card.Title>{myToy.ToyName}</Card.Title>
+                <p>Price : {myToy.price} $</p>
+                <p>Rating : {myToy.rating}</p>
+                <p>Quantity : {myToy.quantity}</p>
+                <p>Category : {myToy.toy?.value}</p>
+                <Card.Text>{myToy.description}</Card.Text>
+              </Card.Body>
+              <Card.Footer>
+                {/* <Link to="/addToy">
                 {" "}
                 <Button>Update My Toy</Button>
               </Link> */}{" "}
-            <td>
-              <Button variant="primary" onClick={() => setModalShow(true)}>
-                Update Toy
-              </Button>
-              <UpdateToy
-                show={modalShow}
-                onHide={() => setModalShow(false)}
-                myToy={myToy}
-                handleUpdateMyToy={handleUpdateMyToy}
-              />
-            </td>
-            <td>
-              <Button
-                onClick={() => handleDeleteMyToy(myToy._id)}
-                variant="danger"
-              >
-                Delete Toy
-              </Button>
-            </td>
-          </Card.Footer>
-        </Card></Col>
-      ))}
-    </CardGroup>
+                <td>
+                  <Button variant="primary" onClick={() => setModalShow(true)}>
+                    Update Toy
+                  </Button>
+                  <UpdateToy
+                    show={modalShow}
+                    onHide={() => setModalShow(false)}
+                    myToy={myToy}
+                    handleUpdateMyToy={handleUpdateMyToy}
+                  />
+                </td>
+                <td>
+                  <Button
+                    onClick={() => handleDeleteMyToy(myToy._id)}
+                    variant="danger"
+                  >
+                    Delete Toy
+                  </Button>
+                </td>
+              </Card.Footer>
+            </Card>
+          </Col>
+        ))}
+      </CardGroup>
+    </div>
   );
 };
 
