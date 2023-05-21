@@ -15,7 +15,8 @@ const Welcome = () => {
         </p>
       </div>
 
-      <div className="details">
+      <div className="details" data-aos="fade-up"
+     data-aos-anchor-placement="top-bottom">
         <div
           className="d-lg-flex gap-3"
          
@@ -57,7 +58,8 @@ const Welcome = () => {
           </div>
         </div>
       </div>
-      <div className="details my-5">
+      <div className="details my-5" data-aos="fade-up"
+     data-aos-anchor-placement="bottom-bottom">
         <div className="first-product d-lg-flex gap-5">
           <div className="summary text-left">
             <h1>

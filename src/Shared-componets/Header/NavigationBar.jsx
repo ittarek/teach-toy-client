@@ -54,7 +54,7 @@ const NavigationBar = () => {
             
                 <Nav className="d-flex justify-content-end flex-grow-1 pe-3 text-white">
         
-                    <NavLink  to="/" className=" text-white text-decoration-none"> Home</NavLink>
+                    <NavLink  to="/" className=" text-white text-decoration-none mx-3"> Home</NavLink>
               
                   <NavLink to="/allToys" className="text-white mx-3 text-decoration-none">
                     All Toys

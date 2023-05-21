@@ -9,28 +9,29 @@ const Gallery = () => {
         Gallery{" "}
       </h1>
       <div className="image-div  mx-auto">
-        <div className="main-image w-50 mx-auto d-lg-flex justify-content-center  ">
-          <img
+        <div className="main-image w-50 mx-auto d-lg-flex justify-content-center  " >
+          <img data-aos="fade-down"
             className="img-fluid w-50 mx-auto rounded roundel-lg"
             src="https://images.unsplash.com/photo-1577638104555-83af2d50b5e7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=327&q=80"
             alt=""
           />
           <img
-            className="img-fluid rounded  roundel-lg"
+            className="img-fluid rounded  roundel-lg" data-aos="fade-up"
             src="https://images.unsplash.com/photo-1524234107056-1c1f48f64ab8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80"
             alt=""
           />{" "}
         </div> 
 
          <div className="second-div w-50 mx-auto ">
-          <img className="img-fluid" src="https://images.unsplash.com/photo-1545165393-011d14b0dcf0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="" />
+          <img data-aos="fade-right" className="img-fluid" src="https://images.unsplash.com/photo-1545165393-011d14b0dcf0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="" />
         </div>
       </div>
 
 
 
       {/* Carousel */}
-      <div className="my-5 ">
+      <div className="my-5 "  data-aos="fade-up"
+     data-aos-duration="3000">
         <Carousel>
           <Carousel.Item>
             <img

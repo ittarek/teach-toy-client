@@ -3,7 +3,7 @@ import { Container } from "react-bootstrap";
 import "./Banner.css";
 const Banner = () => {
   return (
-    <Container className="d-lg-flex align-items-center">
+    <Container className="d-lg-flex align-items-center" data-aos="zoom-in-down">
       <div className="heading">
         <h1 className="text-secondary fs-2"> <span className="text-info fs-1">Tech Toys</span> Galore: Unleash Your Inner Geek and Explore the Latest Gadgets! </h1>
         <p >
