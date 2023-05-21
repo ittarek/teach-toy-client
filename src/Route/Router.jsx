@@ -14,6 +14,7 @@ import AllToys from "../Pages/AllToysPage/AllToys";
 import ToyDetails from "../Pages/AllToysPage/ToyDetailsPage/ToyDetails";
 import DetailsToy from "../Pages/ShopCategoryPage/DetailsToy";
 import AplifierToyDetails from "../Pages/ShopCategoryPage/AplifierToyDetails";
+import MotionToyDetails from "../Pages/ShopCategoryPage/MotionToyDetails";
 
 export const router = createBrowserRouter([
   {
@@ -70,6 +71,11 @@ export const router = createBrowserRouter([
         path: '/amplifierToy/:id',
         element:<PrivetRoute><AplifierToyDetails></AplifierToyDetails></PrivetRoute>,
         loader: ({params})=> fetch(`http://localhost:5000/amplifierToy/${params.id}`)
+      },
+      {
+        path: '/motionToy/:id',
+        element:<PrivetRoute><MotionToyDetails></MotionToyDetails></PrivetRoute>,
+        loader: ({params})=> fetch(`http://localhost:5000/motionToy/${params.id}`)
       },
       {
         path: "/blog",

@@ -5,12 +5,9 @@ const Banner = () => {
   return (
     <Container className="d-lg-flex align-items-center">
       <div className="heading">
-        <h1>Lorem ipsum dolor, sit amet </h1>
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta
-          voluptas consectetur tempora minima quia voluptatum veritatis libero,
-          neque excepturi iure quisquam sequi laboriosam accusantium porro nulla
-          assumenda omnis impedit dignissimos.
+        <h1 className="text-secondary fs-2"> <span className="text-info fs-1">Tech Toys</span> Galore: Unleash Your Inner Geek and Explore the Latest Gadgets! </h1>
+        <p >
+        Welcome to <span className="text-info fs-3 fw-bold">Tech Toys</span> Galore, the ultimate destination for all tech enthusiasts and geeks! We're here to bring you an exciting world of cutting-edge gadgets and innovative toys that will ignite your imagination and keep you entertained for hours on end.
         </p>
       </div>
 

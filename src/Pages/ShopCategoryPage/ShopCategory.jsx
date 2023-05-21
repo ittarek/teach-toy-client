@@ -30,7 +30,7 @@ const ShopCategory = () => {
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:5000/amplifierToy")
+    fetch("http://localhost:5000/motionToy")
       .then((res) => res.json())
       .then((data) => {
         setMotion(data);
@@ -48,7 +48,10 @@ const ShopCategory = () => {
             className={toggleState === 1 ? "tabs active-tabs" : "tabs"}
             onClick={() => toggleTab(1)}
           >
-           <button className="btn btn-outline-info fw-bold">  Robotic Toy </button>
+            <button className="btn btn-outline-info fw-bold">
+              {" "}
+              Robotic Toy{" "}
+            </button>
           </TabList>
 
           {/* category 2 */}
@@ -56,7 +59,10 @@ const ShopCategory = () => {
             className={toggleState === 2 ? "tabs active-tabs" : "tabs"}
             onClick={() => toggleTab(2)}
           >
-            <button className=" btn btn-outline-info fw-bold"> Amplifier Toy </button>
+            <button className=" btn btn-outline-info fw-bold">
+              {" "}
+              Amplifier Toy{" "}
+            </button>
           </TabList>
 
           {/* category 3 */}
@@ -64,7 +70,7 @@ const ShopCategory = () => {
             className={toggleState === 3 ? "tabs active-tabs" : "tabs"}
             onClick={() => toggleTab(3)}
           >
-             <button className="btn btn-outline-info">Motion Sensor </button>
+            <button className="btn btn-outline-info">Motion Sensor </button>
           </TabList>
         </div>
 
@@ -87,9 +93,12 @@ const ShopCategory = () => {
                   <Card.Body>
                     <Card.Text>
                       <p className="fw-bold fs-3">{robot.name}</p>
-                     <Link to={`/detailsToy/${robot._id}`}> <button className="btn btn-outline-info">
-                        View details
-                      </button></Link>
+                      <Link to={`/detailsToy/${robot._id}`}>
+                        {" "}
+                        <button className="btn btn-outline-info">
+                          View details
+                        </button>
+                      </Link>
                     </Card.Text>
                   </Card.Body>
                 </Card>
@@ -119,9 +128,12 @@ const ShopCategory = () => {
                     <Card.Body>
                       <Card.Text>
                         <p className="fw-bold fs-3">{amp.toy_name}</p>
-                       <Link to={`/amplifierToy/${amp._id}`}> <button className="btn btn-outline-info">
-                          View details
-                        </button></Link>
+                        <Link to={`/amplifierToy/${amp._id}`}>
+                          {" "}
+                          <button className="btn btn-outline-info">
+                            View details
+                          </button>
+                        </Link>
                       </Card.Text>
                     </Card.Body>
                   </Card>
@@ -148,9 +160,13 @@ const ShopCategory = () => {
                       <p className="fw-bold fs-3"> {mot.toy_name}</p>
                     </Card.Text>
                     <Card.Text>
-                      <button className="btn btn-outline-info">
-                        View details
-                      </button>
+                      {" "}
+                      <Link to={`/motionToy/${mot._id}`}>
+                        {" "}
+                        <button className="btn btn-outline-info">
+                          View details
+                        </button>
+                      </Link>
                     </Card.Text>
                   </Card.Body>
                 </Card>
