@@ -23,7 +23,7 @@ const blogContent = [
 const ProductBlog = () => {
   return (
     <div className="container my-5">
-      <h1 className="text-center fw-semibold text-info">OUR BLOG</h1>
+      <h1 className="text-center fw-semibold text-info mb-5">OUR BLOG</h1>
       <div className="d-lg-flex justify-content-between align-content-center gap-2">
         {blogContent.map((blog, index) => (
           <div
