@@ -1,0 +1,6 @@
+.best-collection-card:hover{
+background-color: #F1F1F1;
+text-decoration: underline;
+color: aquamarine;
+transition: 0.5s;
+}

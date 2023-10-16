@@ -1,0 +1,43 @@
+.toy-image{
+    width: 50ox !important;
+    height: 250px !important;
+    opacity: 10px;
+}
+.discount-content{
+    margin-top: -245px;
+    margin-left: -150px;
+}
+.title_price{
+    margin-bottom: -100px;
+}
+
+
+
+/* slider css */
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+
+
+  /* Center slide text vertically */
+
+}
+
+/* .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+} */
+
+.swiper {
+  width: 100%;
+
+
+}
+

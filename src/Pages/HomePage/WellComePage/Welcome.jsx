@@ -3,7 +3,7 @@ import { Container } from "react-bootstrap";
 
 const Welcome = () => {
   return (
-    <Container className="my-5">
+    <Container className="my-5 mx-auto">
       <div className="header text-center">
         <h1 className="mb-6">
           Welcome TO Our <span className="fw-bolder"> Tech Toys</span>{" "}
@@ -15,10 +15,12 @@ const Welcome = () => {
         </p>
       </div>
 
-      <div className="details" data-aos="fade-up"
-     data-aos-anchor-placement="top-bottom">
+      <div className="details "
+       data-aos="fade-up"  data-aos-anchor-placement="top-bottom"
+    >
+
         <div
-          className="d-lg-flex gap-3"
+          className="d-lg-flex  gap-3 "
          
         >
           <div className="first-image">
@@ -28,7 +30,7 @@ const Welcome = () => {
               alt=""
             />
           </div>
-          <div className="summary text-left">
+          <div className="summary text-left ms-4">
             <h1>
               Speedster Electronics <span className="text-danger">Scooter</span> - only
               available at select Tech Toys.
@@ -58,8 +60,10 @@ const Welcome = () => {
           </div>
         </div>
       </div>
-      <div className="details my-5" data-aos="fade-up"
-     data-aos-anchor-placement="bottom-bottom">
+      <div className="details my-5 mx-auto" 
+      data-aos="fade-up"  data-aos-anchor-placement="bottom-bottom"
+
+>
         <div className="first-product d-lg-flex gap-5">
           <div className="summary text-left">
             <h1>

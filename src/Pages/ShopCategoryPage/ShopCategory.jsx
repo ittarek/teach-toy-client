@@ -10,10 +10,24 @@ const ShopCategory = () => {
   const [roboticToy, setRoboticToy] = useState([]);
   const [amplifier, setAmplifier] = useState([]);
   const [motion, setMotion] = useState([]);
+  const [allToy, setAllToys] = useState([])
+  console.log("shop",allToy.object);
   // console.log(roboticToy);
   const toggleTab = (index) => {
     setToggleState(index);
   };
+  useEffect(() => {
+    fetch("https://b7-a11-toy-marketplace-server-side.vercel.app/allToy")
+      .then((res) => res.json())
+      .then((data) => {
+        setAllToys(data);
+      });
+  }, []);
+  // const motionToy = allToy.filter(mt => mt.category.label === "Kid-Safe Headphones")
+  // // Sub-Category
+  // console.log("filterid",motionToy);
+
+
 
   useEffect(() => {
     fetch("https://b7-a11-toy-marketplace-server-side.vercel.app/roboticToy")

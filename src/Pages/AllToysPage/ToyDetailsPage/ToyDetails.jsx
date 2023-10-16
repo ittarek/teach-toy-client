@@ -17,7 +17,7 @@ const ToyDetails = () => {
     price,
   } = data || {};
 
-  console.log(data);
+  // console.log(data);
 
   return (
     <div className="d-flex justify-content-center">

@@ -63,7 +63,7 @@ export const router = createBrowserRouter([
           </PrivetRoute>
         ),
         loader: ({ params }) =>
-          fetch(`https://b7-a11-toy-marketplace-server-side.vercel.app/roboticToy/${params?.id}`),
+          fetch(`https://b7-a11-toy-marketplace-server-side.vercel.app/allToy/${params?.id}`),
       },
       {
         path: "/detailsToy/:id",

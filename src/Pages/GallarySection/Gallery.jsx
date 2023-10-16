@@ -11,7 +11,7 @@ const Gallery = () => {
       <div className="image-div  mx-auto">
         <div className="main-image w-50 mx-auto d-lg-flex justify-content-center  " >
           <img data-aos="fade-down"
-            className="img-fluid w-50 mx-auto rounded roundel-lg"
+            className="img-fluid w-50  mx-auto rounded roundel-lg"
             src="https://images.unsplash.com/photo-1656955178167-3888ac44843c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80"
             alt=""
           />
@@ -35,7 +35,7 @@ const Gallery = () => {
         <Carousel>
           <Carousel.Item>
             <img
-              className="d-block w-100 mx-auto"
+              className="d-block h-25 w-100  mx-auto"
               src="https://plus.unsplash.com/premium_photo-1663040347163-8dccf545b0ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
               alt="First slide"
             />
@@ -58,7 +58,7 @@ const Gallery = () => {
           </Carousel.Item>
           <Carousel.Item>
             <img
-              className="d-block w-100 mx-auto"
+              className="d-block h-25 w-100 mx-auto"
               src="https://plus.unsplash.com/premium_photo-1661590817216-b07e76427726?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
               alt="Third slide"
             />

@@ -5,7 +5,7 @@ import ListGroup from "react-bootstrap/ListGroup";
 import "./FeatureToy.css";
 const FeatureToy = () => {
   const [future, setFuture] = useState([]);
-  console.log(future);
+  // console.log(future);
   const [show, setShow] = useState(false);
   useEffect(() => {
     fetch("https://b7-a11-toy-marketplace-server-side.vercel.app/futureToys")

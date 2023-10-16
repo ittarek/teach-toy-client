@@ -9,7 +9,7 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
 
 const Login = () => {
-  const {user, userLogin, googleLogin } = useContext(AuthContext);
+  const { user, userLogin, googleLogin } = useContext(AuthContext);
   const [error, setError] = useState("");
 
   //   redirect to Chef details page
@@ -38,7 +38,6 @@ const Login = () => {
             timer: 1500,
           });
           navigate(from, { replace: true });
-         
         })
         .catch((error) => {
           setError(error.message);
@@ -60,11 +59,9 @@ const Login = () => {
         console.log(loggedUser);
 
         navigate(from, { replace: true });
-      
       })
       .catch((error) => {
         setError(error.message);
-        
       });
   };
 
@@ -104,17 +101,6 @@ const Login = () => {
             Login
           </button>
 
-          <button
-            onClick={handleGoogleLogin}
-            className="btn w-100 fs-4  mt-2 mb-2 btn-outline-info "
-          >
-            {" "}
-            <span className="me-3">
-              <FaGoogle></FaGoogle>{" "}
-            </span>{" "}
-            Login With Google
-          </button>
-
           <div className="login-register text-white">
             <p className="text-white">
               Don't have an account?
@@ -122,6 +108,16 @@ const Login = () => {
             </p>
           </div>
         </Form>
+        <button
+          onClick={handleGoogleLogin}
+          className="btn w-100 fs-4  mt-2 mb-2 btn-outline-info "
+        >
+          {" "}
+          <span className="me-3">
+            <FaGoogle></FaGoogle>{" "}
+          </span>{" "}
+          Login With Google
+        </button>
         <span className="text-danger fs-6 fw-bolder ">{error}</span>
       </div>{" "}
     </div>

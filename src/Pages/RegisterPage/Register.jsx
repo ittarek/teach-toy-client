@@ -42,7 +42,7 @@ const Register = () => {
       setError("please give email and password");
       return;
     } else {
-      return Swal.fire({
+      Swal.fire({
         position: 'top-end',
         icon: 'success',
         title: 'Registration has been successFul',
