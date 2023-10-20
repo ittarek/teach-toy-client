@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import "./Testimolals.css";
@@ -12,46 +12,33 @@ import "swiper/css/navigation";
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
-const Testimonials = [
-  {
-    name: "Tarek",
-    position: "web Developer",
-    img: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-    summary:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa iusto veniam repellendus quos hic beatae quibusdam voluptas reiciendis, eveniet impedit itaque nemo et ex voluptates ipsum, ab tempore consectetur voluptatem.",
-  },
-  {
-    name: "Tarek",
-    position: "web Developer",
-    img: "https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1476&q=80",
-    summary:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa iusto veniam repellendus quos hic beatae quibusdam voluptas reiciendis, eveniet impedit itaque nemo et ex voluptates ipsum, ab tempore consectetur voluptatem.",
-  },
-  {
-    name: "Sifath",
-    position: "Ui Ux Developer",
-    img: "https://images.unsplash.com/photo-1615109398623-88346a601842?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80",
-    summary:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa iusto veniam repellendus quos hic beatae quibusdam voluptas reiciendis, eveniet impedit itaque nemo et ex voluptates ipsum, ab tempore consectetur voluptatem.",
-  },
-  {
-    name: "Rafatha",
-    position: "Back-end Developer",
-    img: "https://images.unsplash.com/photo-1537511446984-935f663eb1f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-    summary:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa iusto veniam repellendus quos hic beatae quibusdam voluptas reiciendis, eveniet impedit itaque nemo et ex voluptates ipsum, ab tempore consectetur voluptatem.",
-  },
-];
+
+
 const Testimonial = () => {
+   const [testimonials, setTestimonials] = useState([]);
      const progressCircle = useRef(null);
      const progressContent = useRef(null);
      const onAutoplayTimeLeft = (s, time, progress) => {
        progressCircle.current.style.setProperty("--progress", 5 - progress);
        progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
      };
+
+
+    
+     useEffect(() => {
+       fetch(`${import.meta.env.VITE_API_URL}/testimonial`)
+         .then(res => res.json())
+         .then(data => {
+      
+
+           setTestimonials(data);
+         });
+     }, []);
+
+     
   return (
     <div className="container my-5">
-      <h1 className="text-center fw-bold text-info ">Out Testimonials</h1>
+      <h1 className="text-center fw-bold text-info ">Our Testimonials</h1>
       <>
         <Swiper
           spaceBetween={30}
@@ -68,8 +55,8 @@ const Testimonial = () => {
           onAutoplayTimeLeft={onAutoplayTimeLeft}
           className="mySwiper my-5"
         >
-          {Testimonials.map((test, index) => (
-            <SwiperSlide key={index}>
+          {testimonials?.map((test) => (
+            <SwiperSlide key={test._id}>
               <div>
                 <img
                   className="w-25 rounded-circle mx-auto slider-image-height"

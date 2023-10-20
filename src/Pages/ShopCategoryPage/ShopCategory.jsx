@@ -11,7 +11,7 @@ const ShopCategory = () => {
   const [amplifier, setAmplifier] = useState([]);
   const [motion, setMotion] = useState([]);
   const [allToy, setAllToys] = useState([])
-  console.log("shop",allToy.object);
+
   // console.log(roboticToy);
   const toggleTab = (index) => {
     setToggleState(index);

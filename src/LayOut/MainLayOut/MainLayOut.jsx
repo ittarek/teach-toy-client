@@ -6,7 +6,7 @@ import Footer from "../../Shared-componets/Footer/Footer";
 
 const MainLayOut = () => {
   const location = useLocation();
-  console.log(location);
+  // console.log(location);
   // path name change  by dynamic
 
   useEffect(() => {

@@ -11,3 +11,10 @@ padding: 10px;
 }
 
 /* image style */
+.img-hover:hover{
+border: 1px solid #2f2f2f;
+  background-color: #876585 !important;
+
+     translate: -1px -5px -5px;
+     transition: 1ms;
+}

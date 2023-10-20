@@ -22,7 +22,7 @@ const Footer = () => {
                 <i className="fas fa-phone"></i>
                 <div className="cta-text">
                   <h4>Call us</h4>
-                  <span>01856838251</span>
+                  <span>+880-14521552</span>
                 </div>
               </div>
             </div>
@@ -31,7 +31,7 @@ const Footer = () => {
                 <i className="far fa-envelope-open"></i>
                 <div className="cta-text">
                   <h4>Mail us</h4>
-                  <span>Ittarek551@gmail.com</span>
+                  <span>Iexample@gmail.com</span>
                 </div>
               </div>
             </div>
